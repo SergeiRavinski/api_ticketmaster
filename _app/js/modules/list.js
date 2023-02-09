@@ -1,6 +1,6 @@
 export default function list(persons) {
     
-	const ulElement = document.getElementById('employee-list');
+	const ulElement = document.getElementById('events');
 	
 	persons.forEach(person => {
 		renderList(person);
