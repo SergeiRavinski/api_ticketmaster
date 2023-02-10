@@ -23,24 +23,10 @@ export default function Navigation() {
 		}
 	}
 
-
-	const header = document.querySelector('.header');
-
-	window.addEventListener('scroll', handleScrollHeader);
-
-	function handleScrollHeader() {
-		if (window.pageYOffset >= window.innerHeight / 15) {
-			header.classList.add('header--scrolled');
-		}
-		else {
-			header.classList.remove('header--scrolled')
-		}
-	}
-
-
+	
 
 	const buttonGallery = document.querySelector('.header__navigation-gallery')
-	const sectionGallery = document.querySelector('.main__images');
+	const sectionGallery = document.querySelector('.main__events');
 	const body = document.querySelector('body');
 
 	let scrolledSectionGallery = false;
