@@ -5,23 +5,34 @@
 }
 
 .main__title h1 {
-	height: 100vh;
+	/*height: 40vw;*/
 	width: 100%;
-	padding: 30vh 30vw 0 0;
+	padding: 20vw 30vw 1vw 0;
 	color: var(--secondary-light);
+	font-size: 1.4rem;
+}
+
+.main__title-underline {
+	height: 1.5px;
+	width: 100%;
+	background-color: var(--secondary-light);
 }
 
 .main__buttons_filter {
+	padding-top: 10vw;
 	display: flex;
 	flex-direction: row;
-	margin: 0.3rem 0;
-	gap: 1rem;
+	margin: 1vw 0;
+	gap: 1vw;
 }
 
 .main__buttons_filter-all,
-.main__buttons_filter-oslo,
-.main__buttons_filter-bergen,
-.main__buttons_filter-aalesund {
+.main__buttons_filter-rock,
+.main__buttons_filter-pop,
+.main__buttons_filter-hiphop, 
+.main__buttons_filter-metal, 
+.main__buttons_filter-jazz, 
+.main__buttons_filter-electronic {
 	font-size: 0.8rem;
 	padding: 0.1rem;
 	background: var(--secondary-light);
@@ -33,20 +44,23 @@
 	color: var(--secondary-light);
 }
 
-.main__images {
+.main__events {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 0.5rem;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 0.5rem;
 	scroll-margin: 5rem;
 }
 
-.main__images div {
-	max-height: 100%;
+
+
+
+.main__events div {
+	/*max-height: 100%;
 	font-size: 0.7rem;
-	position: relative;
+	position: relative;*/
 }
 
-.main__images div button {
+.main__events div button {
 	position: absolute;
 	top: 0.5rem;
 	right: 0.5rem;
@@ -55,20 +69,20 @@
 	background: url(../../assets/icons/heart.svg) center / contain no-repeat;
 }
 
-.main__images div a img {
+.main__events div a img {
 	height: 80%;
 	object-fit: cover;
 	border-radius: 0.15rem;
 }
 
-.main__images div span h5 {
+.main__events div span h5 {
 	color: var(--primary-dark);
-	font-size: 0.55rem;
+	font-size: 0.65rem;
 }
 
-.main__images div span h6 {
+.main__events div span h6 {
 	color: var(--secondary-dark);
-	font-size: 0.45rem;
+	font-size: 0.55rem;
 }
 
 .main__text-paragraph {
