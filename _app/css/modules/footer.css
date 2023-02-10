@@ -1,13 +1,15 @@
 .footer {
-	/*position: relative;*/
+	position: fixed;
+	bottom: 0;
+	left: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 2vw;
 	gap: 3vw;
-	height: 5vw;
+	height: 4vw;
 	width: 100vw;
 	background: var(--primary-dark);
+	font-size: var(--small-text-size);
 }
 
 .footer a {

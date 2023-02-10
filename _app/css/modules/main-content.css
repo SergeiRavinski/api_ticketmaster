@@ -27,12 +27,9 @@
 }
 
 .main__buttons_filter-all,
-.main__buttons_filter-rock,
-.main__buttons_filter-pop,
-.main__buttons_filter-hiphop, 
-.main__buttons_filter-metal, 
-.main__buttons_filter-jazz, 
-.main__buttons_filter-electronic {
+.main__buttons_filter-oslo,
+.main__buttons_filter-bergen,
+.main__buttons_filter-stavanger {
 	font-size: 0.8rem;
 	padding: 0.1rem;
 	background: var(--secondary-light);
@@ -49,6 +46,7 @@
 	grid-template-columns: repeat(5, 1fr);
 	grid-gap: 0.5rem;
 	scroll-margin: 5rem;
+	margin-bottom: 7vw;
 }
 
 
@@ -70,9 +68,8 @@
 }
 
 .main__events div a img {
-	height: 80%;
+	height: 11vw;
 	object-fit: cover;
-	border-radius: 0.15rem;
 }
 
 .main__events div span h5 {
