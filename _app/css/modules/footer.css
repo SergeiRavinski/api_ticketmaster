@@ -1,0 +1,16 @@
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2vw;
+	gap: 3vw;
+	height: 20vw;
+	width: 100%;
+	background: var(--primary-dark);
+}
+
+.footer a {
+	color: var(--secondary-light);
+	cursor: pointer;
+	text-decoration: none;
+}

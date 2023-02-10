@@ -1,0 +1,29 @@
+@import url("");
+
+html {
+	font-size: 2vw;
+	animation: fade 0.3s ease-in-out;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+} 
+
+body::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: url(../assets/images/Veil_of_Maya.jpg) center / cover no-repeat;
+	filter: brightness(0.7);
+	z-index: -10;
+	background-attachment: fixed;
+}
+
+
+
+

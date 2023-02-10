@@ -1,5 +1,6 @@
 export const fetchData = async () => {
-    const endpoint = 'https://app.ticketmaster.com/discovery/v2/events.json?countryCode=no&page=1&size=20&apikey=WyccpB6oo7rfmkGMeApP2BriNGE68Y1j';
+    const apiKey = 'WyccpB6oo7rfmkGMeApP2BriNGE68Y1j'
+    const endpoint = `https://app.ticketmaster.com/discovery/v2/events?&apikey=${apiKey}&locale=no`;
     const response = await fetch(endpoint);
     const result = await response.json();
     //console.log(response)
@@ -14,14 +15,14 @@ export const fetchData = async () => {
     //}
     events.forEach(event => {
             renderList(event);
-                console.log(event._embedded.events) 
+                console.log(event) 
     })
 
     function renderList(event) {
 
-        //const divForImages = document.createElement('img');
-        //divForImages.setAttribute('src', `${event._embedded.events[3].images[3]}`);
-        //divElement.appendChild(divForImages);
+        const divForImages = document.createElement('img');
+        divForImages.setAttribute('src', `${event._embedded.events[0].images[0]}`);
+        divElement.appendChild(divForImages);
 
         const liForEvents = document.createElement('li');
         liForEvents.textContent = (`Event: ${event._embedded.events[6].name}, genre: ${event._embedded.events[6].classifications[0].genre.name}, location: (${event._embedded.events[6].dates.timezone}), promoter: ${event._embedded.events[6].promoter.name}`);

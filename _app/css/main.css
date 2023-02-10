@@ -1,17 +1,8 @@
-body {
-    background-color: rgb(213, 236, 255);
-}
+@import './variables.css';
+@import './reset.css';
+@import './base.css';
 
-div {
-    display: flex;
-    flex-direction: column;
-    margin: 50px;
-    font-size: 20px;
-}
-
-li {
-    /*display: flex;
-    flex-direction: row;*/
-    padding: 5px;
-    
-}
+@import './modules/header.css';
+@import './modules/aside.css';
+@import './modules/main-content.css';
+@import './modules/footer.css';
