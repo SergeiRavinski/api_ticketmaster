@@ -16,7 +16,6 @@
 
 .header__logo a {
 	color: var(--secondary-light);
-	font-size: var(--large-text-size);
 	cursor: pointer;
 	text-decoration: none;
 }
