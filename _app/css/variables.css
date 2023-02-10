@@ -22,10 +22,10 @@
 
 	/* Colors */
 	
-	--primary-dark: #314755;
+	--primary-dark: rgb(2, 108, 223);
 	--secondary-dark: #6c7a84;
-	--primary-light: #FFFFFF;
-	--secondary-light: #e4edf3;
+	--primary-light: #ffffff;
+	--secondary-light: #f4f5ef;
 
 	/* Gaps */
 
