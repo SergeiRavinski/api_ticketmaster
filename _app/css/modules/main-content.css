@@ -43,7 +43,7 @@
 
 .main__events {
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: 0.5rem;
 	scroll-margin: 5rem;
 	margin-bottom: 7vw;
@@ -53,9 +53,9 @@
 
 
 .main__events div {
-	/*max-height: 100%;
+	/*height: 80%;*/
 	font-size: 0.7rem;
-	position: relative;*/
+	position: relative;
 }
 
 .main__events div button {
@@ -68,7 +68,7 @@
 }
 
 .main__events div a img {
-	height: 11vw;
+	height: 250px;
 	object-fit: cover;
 }
 
