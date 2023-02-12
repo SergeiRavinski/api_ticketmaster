@@ -36,21 +36,6 @@ function showEvents(data) {
     });
 }
 
-//const buttonFilterBergen = document.querySelector('.main__buttons_filter-bergen');
-//buttonFilterBergen.addEventListener('click', handleButtonFilterBergen);
-
-//function handleButtonFilterBergen(filter) {
-
-//    filter._embedded.events.filter((event) => {
-
-//        if (!event._embedded.venues[0].city.name === 'Bergen') {
-
-//            //newEvent.style.display = 'none'
-//            console.log(event)
-//        }
-//    })          
-//}
-
 
 
 
