@@ -15,7 +15,7 @@
 .main__underline {
 	height: 1.5px;
 	width: 100%;
-	margin: 1vw 0;
+	margin: 1.2vw 0;
 	background-color: var(--secondary-light);
 }
 
@@ -52,7 +52,6 @@
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: 0.5rem;
 	scroll-margin: 5rem;
-	margin-bottom: 7vw;
 }
 
 .main__events div {
@@ -62,18 +61,24 @@
 	position: relative;
 }
 
+.main__events div:hover {
+	filter: brightness(0.9);
+	transition: 100ms ease-in-out;
+} 
+
 .main__events div button {
 	position: absolute;
 	top: 0.5rem;
 	right: 0.5rem;
 	height: 0.8rem;
 	width: 0.8rem;
-	background: url(../../assets/icons/heart.svg) center / contain no-repeat;
+	background: url(../../assets/icons/heart_gray.svg) center / contain no-repeat;
 }
 
 .main__events div a img {
 	height: 200px;
 	object-fit: cover;
+	border-radius: 0.3vw;
 }
 
 .main__events div span h5 {
