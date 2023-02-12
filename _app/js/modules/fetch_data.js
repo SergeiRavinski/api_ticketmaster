@@ -1,28 +1,24 @@
 export const fetchData = async () => {
     const apiKey = 'WyccpB6oo7rfmkGMeApP2BriNGE68Y1j'
-    const currentEvents = 20;
-    const endpoint = `https://app.ticketmaster.com/discovery/v2/events?&apikey=${apiKey}&locale=no&page=0&size=${currentEvents}`;
+    const currentEvents = 10;
+    const endpoint = `https://app.ticketmaster.com/discovery/v2/events?&apikey=${apiKey}&locale=no&page=7&size=${currentEvents}`;
     const response = await fetch(endpoint);
     const result = await response.json();
     //console.log(result);
     showEvents(result);
-    //handleButtonFilterBergen(result);
 }
 
 function showEvents(data) {
 
     const sectionEvents = document.querySelector('.main__events');
-
     data._embedded.events.forEach((event) => {
     
-        const newEvent = document.createElement('div');   
-         
-
+        const newEvent = document.createElement('div');     
         newEvent.innerHTML = `
             <div class="main__images-filter-aalesund main__images-filter-all">
                 <button></button>
                 <a href="${event.url}">
-                    <img src="${event.images[2].url}" alt="">
+                    <img src="${event.images[3].url}" alt="">
                 </a>
                 <span>
                     <h5>${event.name}</h5>
@@ -32,9 +28,12 @@ function showEvents(data) {
                 </span>
             </div>
         `;
-        sectionEvents.appendChild(newEvent);
+        sectionEvents.appendChild(newEvent);      
     });
-}
+}        
+    
+
+
 
 
 

@@ -7,7 +7,7 @@ export default function Scroll_up() {
 
 	function handleWindowScroll() {
 
-		if (window.pageYOffset >= window.innerHeight * 2) {
+		if (window.pageYOffset >= window.innerHeight * 0.5) {
 			buttonUp.classList.add('main__button-scroll-up--visible');
 		}
 		else {
