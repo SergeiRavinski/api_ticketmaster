@@ -34,7 +34,6 @@
 	
 }
 
-/*:root[data-theme="dark"] {
-	--primary-dark: #fff;
-	--primary-light: #000;
-}*/
+:root[data-theme="light"] {
+	--secondary-light: rgb(2, 108, 223);
+}
