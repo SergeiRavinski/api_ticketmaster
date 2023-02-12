@@ -18,7 +18,7 @@ body::before {
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 43vw;
+	height: 45vw;
 	background: url(../assets/images/background_veil-of-maya.webp) center / cover no-repeat;
 	filter: brightness(0.35);
 	z-index: -10;
