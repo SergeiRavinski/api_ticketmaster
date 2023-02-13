@@ -6,14 +6,14 @@
 .main__title h1 {
 	/*height: 40vw;*/
 	width: 100%;
-	padding: 20vw 30vw 1vw 0;
+	padding: 20vw 10vw 1vw 0;
 	color: var(--secondary-light);
-	font-size: 1.4rem;
+	font-size: 2vw;
 }
 
 .main__title-underline,
 .main__underline {
-	height: 1.5px;
+	height: 0.1rem;
 	width: 100%;
 	margin: 1.2vw 0;
 	background-color: var(--secondary-light);
@@ -36,7 +36,7 @@
 .main__buttons_filter-oslo,
 .main__buttons_filter-bergen,
 .main__buttons_filter-stavanger {
-	font-size: 0.8rem;
+	font-size: var(--small-text-size);
 	padding: 0.1rem;
 	background: var(--secondary-light);
 	border-radius: 0.15rem;
@@ -51,7 +51,7 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: 0.5rem;
-	scroll-margin: 5rem;
+	scroll-margin: 9rem;
 }
 
 .main__events div {
@@ -68,33 +68,34 @@
 
 .main__events div button {
 	position: absolute;
-	top: 0.5rem;
-	right: 0.5rem;
-	height: 0.8rem;
-	width: 0.8rem;
+	top: 1rem;
+	right: 1rem;
+	height: 1.5rem;
+	width: 1.5rem;
 	background: url(../../assets/icons/heart_gray.svg) center / contain no-repeat;
 }
 
 .main__events div a img {
 	height: 200px;
 	object-fit: cover;
-	border-radius: 0.3vw;
+	border-radius: 0.3rem;
 }
 
 .main__events div span h5 {
 	color: var(--primary-dark);
-	font-size: 0.65rem;
+	font-size: var(--small-text-size);
 }
 
 .main__events div span h6 {
 	color: var(--secondary-dark);
-	font-size: 0.55rem;
+	font-size: var(--extra-small-text-size);
 }
 
 .main__text-paragraph {
 	opacity: 0;
-	transform: translateY(30px);
+	transform: translateY(1.5rem);
 	transition: 0.5s all ease-in-out;
+	font-size: var(--medium-text-size);
 }
 
 .main__text-animated {
