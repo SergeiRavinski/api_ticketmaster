@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&family=Roboto&family=Roboto+Condensed&display=swap');
 
 html {
-	font-size: 1.5vw;
 	animation: fade 0.3s ease-in-out;
 }
 
@@ -18,7 +17,7 @@ body::before {
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 45vw;
+	height: 43vw;
 	background: url(../assets/images/background_veil-of-maya.webp) center / cover no-repeat;
 	filter: brightness(0.35);
 	z-index: -10;

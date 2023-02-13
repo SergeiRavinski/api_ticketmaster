@@ -2,19 +2,18 @@
 
 	/* Desktop variables */
 
-	--large-text-size: 2.5vw;
-
-	--body-text-size: 1.5vw;
-
-	--small-text-size: 1vw;
+	--large-text-size: 2.5rem;
+	--medium-text-size: 1.6rem;
+	--small-text-size: 1.2rem;
+	--extra-small-text-size: 0.8rem;
 
 	/* Mobile variables */
 
-	--mobile-large-text-size: 8vw;
+	--mobile-large-text-size: 8rem;
 	
-	--mobile-body-text-size: 5vw;
+	--mobile-body-text-size: 5rem;
 
-	--mobile-small-text-size: 3vw;
+	--mobile-small-text-size: 3rem;
 
 	/* Fonts */
 
@@ -29,8 +28,8 @@
 
 	/* Gaps */
 
-	--grid-gap: 0.6vw;
-	--mobile-grid-gap: 2vw;
+	--grid-gap: 0.6rem;
+	--mobile-grid-gap: 2rem;
 	
 }
 
