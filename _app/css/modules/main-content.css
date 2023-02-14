@@ -4,7 +4,6 @@
 }
 
 .main__background {
-	content: '';
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -150,6 +149,7 @@
 .main__events-oslo div button,
 .main__events-bergen div button {
 	position: absolute;
+	z-index: 20;
 	top: 1rem;
 	right: 1rem;
 	height: 1.5rem;
@@ -163,6 +163,7 @@
 	height: 200px;
 	object-fit: cover;
 	border-radius: 0.3rem;
+	filter: drop-shadow(0.1rem 0.1rem 0.2rem var(--tertiary-dark));
 }
 
 .main__events-events div span h5,
@@ -181,7 +182,7 @@
 
 .main__text-paragraph {
 	opacity: 0;
-	transform: translateY(1.5rem);
+	transform: translateY(5rem);
 	transition: 0.5s all ease-in-out;
 	font-size: var(--medium-text-size);
 }
