@@ -21,6 +21,12 @@
 	text-decoration: none;
 }
 
+/*.header__logo a img {
+	display: flex;
+	justify-self: center;
+	align-self: center;
+}*/
+
 .header__navigation {
 	display: flex;
 	align-items: center;
