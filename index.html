@@ -13,7 +13,7 @@
 		<header class="header">
 			<section class="header__logo">
 				<a href="#">
-					<img src="./_app/assets/logo/Logo.svg" alt="">
+					<img src="./_app/assets/logo/Logo.svg" alt="logo">
 				</a>
 			</section>
 			<nav class="header__navigation">
@@ -32,28 +32,45 @@
 		</header>
 
 		<main class="main">
-
+			<img class="main__background" src="./_app/assets/images/Veil_of_Maya.jpg" alt="background image">
 			<span class="main__title">
 				<h1>
 					If you love music,<br>you know how a great <br>concert can improve your mood. Music's the medicine of the mind.
 				</h1>
-				<div class="main__title-underline"></div>
 			</span>
+			<div class="main__title-underline"></div>
+			<div class="main__input">
+				<input class="main__input-field" type="text" placeholder="City, artist or genre">
+				<button class="main__input-button">
+					<img src="./_app/assets/icons/Search_white.svg" alt="">
+				</button>
+			</div>
 
-			<section class="main__buttons_filter">
+			<!--<section class="main__buttons_filter">
 				<button class="main__buttons_filter-all main__buttons_filter--filtered">All cities</button>
 				<button class="main__buttons_filter-oslo">Oslo</button>
 				<button class="main__buttons_filter-bergen">Bergen</button>
 				<button class="main__buttons_filter-stavanger">Stavanger</button>
+			</section>-->
+
+			<section class="main__events">
+				<h2 class="main__events-title">Events</h2>
+				<div class="main__events-events"></div>
+				<div class="main__events-underline"></div>
 			</section>
 
-			<div class="main__underline"></div>
+			<section class="main__oslo">
+				<h2 class="main__events-title">Oslo</h2>
+				<div class="main__events-oslo"></div>
+				<div class="main__events-underline"></div>
+			</section>
 
-			<div class="main__events"></div>
-
-			<div class="main__underline"></div>
+			<section class="main__bergen">
+				<h2 class="main__events-title">Bergen</h2>
+				<div class="main__events-bergen"></div>
+				<div class="main__events-underline"></div>
+			</section>
 			
-
 			<section class="main__text">
 				<span class="main__text-paragraph">
 					<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam minus a assumenda quae quas! Ad possimus saepe itaque praesentium porro nihil ullam quasi non voluptates eveniet, ab quos culpa illo.</li>
