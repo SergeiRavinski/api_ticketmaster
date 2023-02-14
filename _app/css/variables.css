@@ -22,7 +22,8 @@
 	/* Colors */
 	
 	--primary-dark: rgb(2, 108, 223);
-	--secondary-dark: #6c7a84;
+	--secondary-dark: #73808b;
+	--tertiary-dark: rgb(0, 62, 128);
 	--primary-light: #ffffff;
 	--secondary-light: #f4f5ef;
 
