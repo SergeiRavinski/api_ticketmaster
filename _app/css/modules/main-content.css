@@ -137,13 +137,14 @@
 	min-height: 13vw;
 	font-size: 0.7rem;
 	position: relative;
+	overflow: hidden;
 }
 
-.main__events-events div:hover,
+/*.main__events-events div:hover,
 .main__events-oslo div:hover,
 .main__events-bergen div:hover {
-	filter: brightness(0.9);
-} 
+	transform: scale(1.02);
+} */
 
 .main__events-events div button,
 .main__events-oslo div button,
@@ -157,13 +158,26 @@
 	background: url(../../assets/icons/heart_blue.svg) center / contain no-repeat;
 }
 
+.main__events-events div a,
+.main__events-oslo div a,
+.main__events-bergen div a {
+	display: flex;
+}
+
 .main__events-events div a img,
 .main__events-oslo div a img,
 .main__events-bergen div a img {
 	height: 200px;
 	object-fit: cover;
 	border-radius: 0.3rem;
+	transition: 0.2s linear;
 	filter: drop-shadow(0.1rem 0.1rem 0.2rem var(--tertiary-dark));
+}
+
+.main__events-events div a img:hover,
+.main__events-oslo div a img:hover,
+.main__events-bergen div a img:hover {
+	transform: scale(1.01);
 }
 
 .main__events-events div span h5,
