@@ -1,7 +1,8 @@
 export const fetchData = async () => {
     const apiKey = 'WyccpB6oo7rfmkGMeApP2BriNGE68Y1j'
-    const currentEvents = 10;
-    const endpoint = `https://app.ticketmaster.com/discovery/v2/events?&apikey=${apiKey}&locale=no&page=11&size=${currentEvents}`;
+    const currentEvents = 20;
+    const rootUrl = `https://app.ticketmaster.com/discovery/v2`;
+    const endpoint = `${rootUrl}/events?&apikey=${apiKey}&size=${currentEvents}&locale=no`;
     const response = await fetch(endpoint);
     const result = await response.json();
     //console.log(result);
