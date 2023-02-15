@@ -1,4 +1,4 @@
-export default function Navigation() {
+export default function navigationMobile() {
 
 	let isOpenedButton = false;
 	const buttonHamburgerMenu = document.querySelector('.header__navigation-mobile');

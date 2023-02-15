@@ -1,4 +1,4 @@
-export const fetchData = async () => {
+export default async function fetchData() {
     const apiKey = 'WyccpB6oo7rfmkGMeApP2BriNGE68Y1j'
     const currentEvents = 20;
     const rootUrl = `https://app.ticketmaster.com/discovery/v2`;
@@ -9,6 +9,7 @@ export const fetchData = async () => {
     showEvents(result);
     showEventsOslo(result);
     showEventsBergen(result);
+    return result;
 }
 
 function showEvents(data) {
@@ -26,7 +27,7 @@ function showEvents(data) {
                 <span>
                     <h5>${event.name}</h5>
                     <h6>${event._embedded.venues[0].city.name}</h6>
-                    <h6>Pris fra ${event.priceRanges[0].min} ${event.priceRanges[0].currency}</h6>
+                    
                     <h6>${event.dates.start.localDate}</h6>
                 </span>
             </div>
@@ -38,9 +39,9 @@ function showEvents(data) {
 function showEventsOslo(data) {
 
     const sectionEventsOslo = document.querySelector('.main__events-oslo');
-    data._embedded.events.filter(event => {
+    data._embedded.events.find(event => {
 
-        if (event._embedded.venues[0].city.name === 'Oslo') {
+        if (event._embedded.venues[0].city.name === 'Bergen') {
     
             const newEventOslo = document.createElement('div');     
             newEventOslo.innerHTML = `
@@ -65,9 +66,9 @@ function showEventsOslo(data) {
 function showEventsBergen(data) {
 
     const sectionEventsBergen = document.querySelector('.main__events-bergen');
-    data._embedded.events.filter(event => {
+    data._embedded.events.find(event => {
 
-        if (event._embedded.venues[0].city.name === 'Bergen') {
+        if (event._embedded.venues[0].city.name === 'Oslo') {
     
             const newEventBergen = document.createElement('div');     
             newEventBergen.innerHTML = `
