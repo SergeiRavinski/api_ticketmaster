@@ -1,4 +1,4 @@
-export default function Scroll_up() {
+export default function scrollUp() {
 
 	const buttonUp = document.querySelector('.main__button-scroll-up');
 
