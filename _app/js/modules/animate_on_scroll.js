@@ -1,4 +1,4 @@
-export default function Animate_on_scroll() {
+export default function animateOnScroll() {
 
 	const text = document.querySelector('.main__text .main__text-paragraph');
 	
