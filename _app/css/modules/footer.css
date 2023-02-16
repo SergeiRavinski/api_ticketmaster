@@ -3,7 +3,6 @@
 	justify-content: center;
 	align-items: center;
 	gap: 2vw;
-	height: 4vw;
 	width: 100vw;
 	background: var(--primary-dark);
 	font-size: var(--small-text-size);
@@ -14,4 +13,11 @@
 	color: var(--secondary-light);
 	cursor: pointer;
 	text-decoration: none;
+}
+
+.footer a img {
+	height: 2vw;
+	width: 2vw;
+	margin: 1vw 0;
+	display: flex;
 }

@@ -15,6 +15,7 @@
 	color: var(--secondary-light);
 	cursor: pointer;
 	text-decoration: none;
+	display: flex;
 }
 
 /*.header__logo a img {
@@ -62,6 +63,10 @@
 
 @media screen and (max-width: 480px) {
 
+	.header {
+		padding: 2vw;
+	}
+
 	.header__navigation {
 		display: none;
 	}
@@ -70,17 +75,13 @@
 		display: block;
 	}
 
-	.header {
-		padding: 2vw;
-	}
-
 	.header__logo {
-		display: flex;
-		align-items: center;
+
 	}
 
 	.header__logo a {
 		font-size: var(--mobile-large-text-size);
+
 	}
 
 	.header__navigation-mobile {
