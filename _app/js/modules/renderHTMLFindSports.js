@@ -2,9 +2,9 @@ export default function renderHTMLFindMusic(data) {
 
 	const sectionEventsOslo = document.querySelector('.main__events-oslo');
 
-	data.forEach(event => {
-		
-		if (event.classifications[0].segment.name === 'Music') {
+	data.find(event => {
+
+		if (event.classifications[0].segment.name === 'Sports') {
 	
 				const newEventOslo = document.createElement('div');     
 				newEventOslo.innerHTML = `
@@ -24,4 +24,4 @@ export default function renderHTMLFindMusic(data) {
 				sectionEventsOslo.appendChild(newEventOslo);  
 		}    
 	});  
-}
+}	

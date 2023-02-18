@@ -1,6 +1,16 @@
-export default function renderHTMLEvents(data) {
+export default function renderHTMLEvents(data, type) {
+	let sectionEvents	= '';
+	if(type === 'music') {
+		sectionEvents = document.querySelector('.main__events-oslo');
+	}
+	if(type === `sports`) {
+	  sectionEvents = document.querySelector('.main__events-bergen');
+	}
+	if(type === undefined) {
+		sectionEvents = document.querySelector('.main__events-events');
+	}
 
-	const sectionEvents = document.querySelector('.main__events-events');
+	
 	data.forEach((event) => {
 	
 		 const newEvent = document.createElement('div');     
