@@ -59,7 +59,6 @@
 	width: 100%;
 	display: flex;
 	justify-self: center;
-	height: 2.5rem;
 	width: 25rem;
 	border-radius: .4rem;
 	border: solid .09rem var(--tertiary-dark);
