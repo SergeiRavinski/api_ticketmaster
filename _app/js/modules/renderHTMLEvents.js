@@ -1,18 +1,14 @@
 export default function renderHTMLEvents(data, type) {
+
 	let sectionEvents	= '';
-	if(type === 'music') {
-		sectionEvents = document.querySelector('.main__events-oslo');
+	if(type === `music`) {
+		sectionEvents = document.querySelector('.main__music-events');
 	}
-	if(type === `sports`) {
-	  sectionEvents = document.querySelector('.main__events-bergen');
-	}
-	if(type === undefined) {
+	else if(type === undefined) {
 		sectionEvents = document.querySelector('.main__events-events');
 	}
-
 	
 	data.forEach((event) => {
-	
 		 const newEvent = document.createElement('div');     
 		 newEvent.innerHTML = `
 			  <div>
