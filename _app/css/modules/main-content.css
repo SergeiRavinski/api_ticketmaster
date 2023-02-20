@@ -4,12 +4,13 @@
 }
 
 .main__background {
+	content: '';
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100vw;
 	height: 45vw;
-	object-fit: cover;
+	background: url(../../assets/images/Veil_of_Maya.jpg) center / cover no-repeat;
 	filter: brightness(0.5);
 	z-index: -10;
 	background-attachment: fixed;
