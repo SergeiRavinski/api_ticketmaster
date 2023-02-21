@@ -1,12 +1,22 @@
 export default function renderHTMLEvents(data, type) {
 
 	let sectionEvents	= '';
-	if(type === `music`) {
-		sectionEvents = document.querySelector('.main__music-events');
-	}
-	else if(type === undefined) {
+
+	if(type === undefined) {
 		sectionEvents = document.querySelector('.main__events-events');
 	}
+
+	else if(type === 'sports') {
+		sectionEvents = document.querySelector('.main__sports-events');
+	}
+
+	else if(type === 'music') {
+		sectionEvents = document.querySelector('.main__music-events');
+	}
+
+	
+
+
 	
 	data.forEach((event) => {
 		 const newEvent = document.createElement('div');     

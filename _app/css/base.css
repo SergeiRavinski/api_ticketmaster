@@ -9,6 +9,7 @@ body {
 	flex-direction: column;
 	position: relative;
 	font-family: 'Roboto', sans-serif;
+	background: var(--secondary-light);
 } 
 
 

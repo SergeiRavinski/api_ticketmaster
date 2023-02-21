@@ -120,18 +120,21 @@
 	margin: 2.5vw 0;
 }
 
-.main__events {
+.main__events,
+.main__sports {
 	scroll-margin: 5rem;
 }
 
 .main__events-title,
-.main__music-title {
+.main__music-title,
+.main__sports-title {
 	color: var(--primary-dark);
 	font-size: var(--medium-text-size);
 }
 
 .main__events-events,
-.main__music-events {
+.main__music-events,
+.main__sports-events {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: 0.5rem;
@@ -139,7 +142,8 @@
 }
 
 .main__events-events div,
-.main__music-events div {
+.main__music-events div,
+.main__sports-events div {
 	min-width: 15vw;
 	min-height: 13vw;
 	font-size: 0.7rem;
@@ -148,7 +152,8 @@
 }
 
 .main__events-events div button,
-.main__music-events div button {
+.main__music-events div button,
+.main__sports-events div button {
 	position: absolute;
 	z-index: 20;
 	top: 1rem;
@@ -159,7 +164,8 @@
 }
 
 .main__events-events div a,
-.main__music-events div a {
+.main__music-events div a,
+.main__sports-events div a {
 	display: flex;
 	overflow: hidden;
 	border-radius: 0.3rem;
@@ -168,25 +174,29 @@
 }
 
 .main__events-events div a img,
-.main__music-events div a img {
+.main__music-events div a img,
+.main__sports-events div a img {
 	height: 200px;
 	object-fit: cover;
 	transition: 0.3s linear;	
 }
 
 .main__events-events div a img:hover,
-.main__music-events div a img:hover {
+.main__music-events div a img:hover,
+.main__sports-events div a img:hover {
 	transform: scale(1.05);
 }
 
 .main__events-events div span h5,
-.main__music-events div span h5 {
+.main__music-events div span h5,
+.main__sports-events div span h5 {
 	color: var(--primary-dark);
 	font-size: var(--small-text-size);
 }
 
 .main__events-events div span h6,
-.main__music-events div span h6 {
+.main__music-events div span h6,
+.main__sports-events div span h6 {
 	color: var(--secondary-dark);
 	font-size: var(--extra-small-text-size);
 }
@@ -216,7 +226,7 @@
 }
 
 .main__button-scroll-up {
-	background: var(--primary-light);
+	background: var(--secondary-light);
 }
 
 .main__button-scroll-up img {

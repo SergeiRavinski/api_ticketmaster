@@ -8,6 +8,7 @@ import animateOnScroll from './modules/animate_on_scroll.js';
 
 //fetchData();
 const musicEvents = filtering(await fetchData(), `Music`);
+const sportEvents = filtering(await fetchData(), `Sports`);
 /*console.log(sportEvents)
 console.log(musicEvents)
 renderHTMLEvents(await fetchData());
@@ -16,6 +17,7 @@ renderHTMLFindSports(await fetchData());
 */
 renderHTMLEvents(await fetchData());
 renderHTMLEvents(musicEvents, `music`);
+renderHTMLEvents(sportEvents, `sports`);
 
 navigationMobile();
 scrollUp();
