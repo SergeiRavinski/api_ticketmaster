@@ -59,7 +59,7 @@
 	width: 100%;
 	display: flex;
 	justify-self: center;
-	width: 25rem;
+	width: 20rem;
 	border-radius: .4rem;
 	border: solid .09rem var(--tertiary-dark);
 	background: var(--primary-dark);
@@ -71,18 +71,18 @@
 	font-size: var(--small-text-size);
 }
 
-.header__input-field[type=text] {
+.header__input-field {
 	color: var(--primary-light);
 	font-size: var(--small-text-size);
 	padding: .4vw;
 }
 
-.header__input-field[type=text]:focus {
+.header__input-field:focus {
 	background: var(--primary-light);
 	color: var(--tertiary-dark);
 }
 
-.header__input-field[type=text]:focus::placeholder {
+.header__input-field:focus::placeholder {
 	color: var(--secondary-dark);
 }
 
@@ -94,16 +94,22 @@
 	white-space: nowrap;
 }
 
-.header__navigation button {
+.header__navigation-about-us,
+.header__navigation-gallery,
+.header__navigation-wishlist,
+.header__navigation-contacts {
 	color: var(--secondary-light);
 	cursor: pointer;
 	text-decoration: none;
 	transition: 0.3s;
 }
 
-.header__navigation button::after {
+.header__navigation-about-us::after,
+.header__navigation-gallery::after,
+.header__navigation-wishlist::after,
+.header__navigation-contacts::after {
 	content: "";
-	height: 0.2vw;
+	height: 0.2rem;
 	background: var(--primary-light);
 	width: 0;
 	transition: 0.3s;
@@ -111,13 +117,29 @@
 	display: block;
 }
 
-.header__navigation button:hover {
+.header__navigation-about-us:hover,
+.header__navigation-gallery:hover,
+.header__navigation-wishlist:hover,
+.header__navigation-contacts:hover {
 	color: var(--primary-light);
 }
 
-.header__navigation button:hover::after {
+.header__navigation-about-us:hover::after,
+.header__navigation-gallery:hover::after,
+.header__navigation-wishlist:hover::after,
+.header__navigation-contacts:hover::after {
 	width: 100%;
 	transition: 0.3s linear;
+}
+
+.header__navigation-contacts--active::after {
+	content: "";
+	height: 0.2rem;
+	background: var(--primary-light);
+	width: 100%;
+	transition: 0.3s;
+	margin: auto;
+	display: block;
 }
 
 .header__navigation-mobile {

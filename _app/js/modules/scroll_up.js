@@ -1,6 +1,7 @@
 export default function scrollUp() {
 
 	const buttonUp = document.querySelector('.main__button-scroll-up');
+	const buttonGallery = document.querySelector('.header__navigation-gallery')
 
 	window.addEventListener('scroll', handleWindowScroll);
 	buttonUp.addEventListener('click', handleButtonArrowUp);
@@ -21,5 +22,6 @@ export default function scrollUp() {
 			left: 0,
 			behavior: "smooth",
 		})
+		buttonGallery.classList.remove('header__navigation-contacts--active');
 	}
 }

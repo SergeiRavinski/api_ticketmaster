@@ -48,11 +48,14 @@ export default function navigationMobile() {
 			sectionGallery.scrollIntoView ({
 				behavior: "smooth",
 			})
+			buttonGallery.classList.add('header__navigation-contacts--active');
+			
 		}
 		else {
 			body.scrollIntoView ({
 				behavior: "smooth",
 			})
+			buttonGallery.classList.remove('header__navigation-contacts--active');
 		}
 		
 	}
