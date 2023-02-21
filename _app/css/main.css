@@ -5,3 +5,7 @@
 @import './modules/header.css';
 @import './modules/main-content.css';
 @import './modules/footer.css';
+@import './modules/article_page_conserts.css';
+@import './modules/article_page_sports.css';
+@import './modules/article_page_artandtheater.css';
+@import './modules/article_page_family.css';
