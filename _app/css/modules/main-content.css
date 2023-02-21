@@ -236,6 +236,59 @@
 	display: block;
 }
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 992px) {
 
+	.main {
+		max-width: 90vw;
+		margin: 0 5vw;
+	}
+
+	.main__background {
+		display: none;
+	}
+	
+	.main__title {
+		display: none;
+	}
+	
+	.main__title h1 {
+		display: none;
+	}
+	
+	.main__underline-white {
+		display: none;
+	}
+	
+	.main__categories {
+		margin-top: 2vw;
+	}
+
+	.main__categories-items {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) ;
+		gap: 2vw;
+		margin: 1vw 0;
+	}
+}	
+
+@media screen and (max-width: 600px) {
+
+	.main {
+		max-width: 95vw;
+		margin: 0 2.5vw;
+	}
+
+	.main__categories-items-concerts,
+	.main__categories-items-sports,
+	.main__categories-items-artandtheater,
+	.main__categories-items-family {
+		height: 280px;
+	}
+
+	.main__events-events div a img,
+	.main__music-events div a img {
+		height: 250px;
+		object-fit: cover;
+		transition: 0.3s linear;	
+	}
 }

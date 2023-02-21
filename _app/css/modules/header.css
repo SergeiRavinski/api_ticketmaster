@@ -153,8 +153,9 @@
 }
 
 @media only screen and (max-width: 992px) {
+
 	.header {
-		padding: 0.5rem;
+		padding: 1.5vw 1.5vw;
 	}
 
 	.header__logoandinput {
@@ -245,6 +246,10 @@
 }
 
 @media screen and (max-width: 600px) {
+
+	.header {
+		padding: 2.5vw 2.5vw;
+	}
 	
 	.header__logoandinput {
 		position: relative;
