@@ -177,6 +177,7 @@
 		position: relative;
 		height: 75%;
 		width: 2.5rem;
+		cursor: pointer;
 	}
 
 	.header__navigation-mobile div {

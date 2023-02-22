@@ -18,19 +18,24 @@ export default function scrollIntoEvents() {
 	};
 
 	function renderHTMLScrollGallery() {
+
+		sectionGallery.scrollIntoView ({
+			behavior: "smooth",
+		})
+		//buttonGallery.classList.add('header__navigation-contacts--active');
 		
-		if (scrolledSectionGallery === true) {
-			sectionGallery.scrollIntoView ({
-				behavior: "smooth",
-			})
-			buttonGallery.classList.add('header__navigation-contacts--active');
+		//if (scrolledSectionGallery === true) {
+		//	sectionGallery.scrollIntoView ({
+		//		behavior: "smooth",
+		//	})
+		//	buttonGallery.classList.add('header__navigation-contacts--active');
 			
-		}
-		else {
-			body.scrollIntoView ({
-				behavior: "smooth",
-			})
-			buttonGallery.classList.remove('header__navigation-contacts--active');
-		}	
+		//}
+		//else {
+		//	body.scrollIntoView ({
+		//		behavior: "smooth",
+		//	})
+		//	buttonGallery.classList.remove('header__navigation-contacts--active');
+		//}	
 	}
 }
