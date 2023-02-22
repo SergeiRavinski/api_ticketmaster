@@ -2,22 +2,18 @@ export default function renderHTMLEvents(data, type) {
 
 	let sectionEvents	= '';
 
-	if(type === undefined) {
-		sectionEvents = document.querySelector('.main__events-events');
-	}
-
-	else if(type === 'sports') {
-		sectionEvents = document.querySelector('.main__sports-events');
-	}
-
-	else if(type === 'music') {
+	if(type === 'music') {
 		sectionEvents = document.querySelector('.main__music-events');
 	}
 
-	
+	//else if(type === 'sports') {
+	//	sectionEvents = document.querySelector('.main__sports-events');
+	//}
 
+	else if (type === undefined) {
+		sectionEvents = document.querySelector('.main__events-events');
+	}
 
-	
 	data.forEach((event) => {
 		 const newEvent = document.createElement('div');     
 		 newEvent.innerHTML = `
@@ -33,7 +29,7 @@ export default function renderHTMLEvents(data, type) {
 						 <h6>${event.dates.start.localDate}</h6>
 					</span>
 			  </div>
-		 `;
+		 `
 		 sectionEvents.appendChild(newEvent);      
 	});
 }   
