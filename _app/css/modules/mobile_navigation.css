@@ -1,5 +1,7 @@
 .main__mobile-navigation {
 	position: fixed;
+	display: flex;
+	flex-direction: column;
 	top: 0;
 	right: 0;
 	width: 30%;

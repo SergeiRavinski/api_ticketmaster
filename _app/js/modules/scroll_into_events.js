@@ -22,6 +22,7 @@ export default function scrollIntoEvents() {
 		sectionGallery.scrollIntoView ({
 			behavior: "smooth",
 		})
+		
 		//buttonGallery.classList.add('header__navigation-contacts--active');
 		
 		//if (scrolledSectionGallery === true) {

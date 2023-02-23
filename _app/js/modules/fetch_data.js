@@ -10,10 +10,9 @@ export const fetchData = async () => {
 }
 
 export const filtering = (data, type) => {
-
-        return data.filter(event => {
-            return event.classifications[0].segment.name === type;
-        });
+    return data.filter(event => {
+        return event.classifications[0].segment.name === type;
+    });
 }
 
 
