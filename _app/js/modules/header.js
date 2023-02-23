@@ -48,8 +48,11 @@ export default function header() {
 
 	function renderHTMLMenu() {
 		if (isOpenedNavigationMobile === true) {
+			(isOpenedWishlist = false);
 			buttonHamburgerMenu.classList.add('open');
 			mobileNavigation.classList.add('main__mobile-navigation--visible')
+			wishlist.classList.remove('main__wishlist--visible');
+			buttonWishlist.classList.remove('header__navigation-wishlist--active');
 		}
 		else {
 			buttonHamburgerMenu.classList.remove('open');
@@ -59,8 +62,11 @@ export default function header() {
 
 	function renderHTMLWishlist() {
 		if (isOpenedWishlist === true) {
+			(isOpenedNavigationMobile = false);
 			wishlist.classList.add('main__wishlist--visible');
 			buttonWishlist.classList.add('header__navigation-wishlist--active');
+			buttonHamburgerMenu.classList.remove('open');
+			mobileNavigation.classList.remove('main__mobile-navigation--visible')
 		}
 		else {
 			wishlist.classList.remove('main__wishlist--visible');
