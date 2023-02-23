@@ -6,10 +6,6 @@ export default function renderHTMLEvents(data, type) {
 		sectionEvents = document.querySelector('.main__music-events');
 	}
 
-	//else if(type === 'sports') {
-	//	sectionEvents = document.querySelector('.main__sports-events');
-	//}
-
 	else if (type === undefined) {
 		sectionEvents = document.querySelector('.main__events-events');
 	}
