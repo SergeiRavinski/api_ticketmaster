@@ -1,4 +1,4 @@
-export default function header () {
+export default function header() {
 
 	let isOpenedNavigationMobile = false;
 	let isOpenedWishlist = false;

@@ -12,11 +12,13 @@ const musicEvents = filtering(await fetchData(), 'Music');
 renderHTMLEvents(await fetchData());
 renderHTMLEvents(musicEvents, 'music');
 //renderHTMLEvents(sportEvents, 'sports');
-
-
 header();
 scrollIntoEvents();
 scrollUp();
 //animateOnScroll();
+
+
+
+
 
 

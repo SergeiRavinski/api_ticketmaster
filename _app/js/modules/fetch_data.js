@@ -3,10 +3,16 @@ export const fetchData = async () => {
     const currentEvents = 20;
     const rootUrl = `https://app.ticketmaster.com/discovery/v2`;
     const endpoint = `${rootUrl}/events?&apikey=${apiKey}&size=${currentEvents}&countryCode=no`;
-    const response = await fetch(endpoint);
-    const result = await response.json();
-    const { events } = result._embedded;
-    return events;
+
+    let response = '';
+    response = await fetch(endpoint);
+    try {
+        const result = await response.json();
+        const { events } = result._embedded;
+        return events;
+    } catch (error) {
+        handleError(error);   
+    }
 }
 
 export const filtering = (data, type) => {
@@ -15,14 +21,6 @@ export const filtering = (data, type) => {
     });
 }
 
+function handleError(error) {
 
-
-
-
-
-
-
-
-
-
-
+}
