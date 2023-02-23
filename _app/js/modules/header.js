@@ -4,12 +4,16 @@ export default function header () {
 	let isOpenedWishlist = false;
 
 	const buttonHamburgerMenu = document.querySelector('.header__navigation-mobile');
-	const mobileNavigation = document.querySelector('.main__mobile-navigation');
 	const buttonWishlist = document.querySelector('.header__navigation-wishlist');
+	const mobileNavigation = document.querySelector('.main__mobile-navigation');
 	const wishlist = document.querySelector('.main__wishlist');
+	const body = document.querySelector('.main');
 
 	buttonHamburgerMenu.addEventListener('click', handleButtonHamburgerMenu);
 	buttonWishlist.addEventListener('click', handleButtonWishlist);
+	body.addEventListener('click', handleClickOverBody);
+	wishlist.addEventListener('click', handleClickOverWishlist);
+	mobileNavigation.addEventListener('click', handleClickOverMobileNavigation);
 
 	function visibilityHamburgerMenu() {
 		isOpenedNavigationMobile = !isOpenedNavigationMobile;
@@ -27,6 +31,19 @@ export default function header () {
 	function handleButtonWishlist() {
 		visibilityWishlist();
 		renderHTMLWishlist();
+	}
+
+	function handleClickOverBody(event) {
+		event.stopPropagation();
+		renderHTMLCloseMenus();
+	}
+
+	function handleClickOverWishlist(event) {
+		event.stopPropagation();
+	}
+
+	function handleClickOverMobileNavigation(event) {
+		event.stopPropagation();
 	}
 
 	function renderHTMLMenu() {
@@ -49,5 +66,14 @@ export default function header () {
 			wishlist.classList.remove('main__wishlist--visible');
 			buttonWishlist.classList.remove('header__navigation-wishlist--active');
 		}
+	}
+
+	function renderHTMLCloseMenus() {
+		buttonHamburgerMenu.classList.remove('open');
+		mobileNavigation.classList.remove('main__mobile-navigation--visible')
+		wishlist.classList.remove('main__wishlist--visible');
+		buttonWishlist.classList.remove('header__navigation-wishlist--active');
+		(isOpenedWishlist = false);
+		(isOpenedNavigationMobile = false);
 	}
 }
