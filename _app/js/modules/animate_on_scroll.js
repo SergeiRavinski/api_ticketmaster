@@ -1,19 +1,21 @@
 export default function animateOnScroll() {
 
-	const text = document.querySelector('.main__text .main__text-paragraph');
+	const mainEvents = document.querySelectorAll('.main__events-animate');
 	
 	window.addEventListener('scroll', animateElements);
 
 	function animateElements() {
 
-		const introPosition = text.getBoundingClientRect().top;
-		const animationPosition = window.innerHeight / 1.3;
+		for (const section of mainEvents) {
 
-		if (introPosition < animationPosition) {
-			text.classList.add('main__text-animated');
-		}
-		else {
-			text.classList.remove('main__text-animated');
+			const introPosition = section.getBoundingClientRect().top;
+			const animationPosition = window.innerHeight / 1.1;
+			if (introPosition < animationPosition) {
+				section.classList.add('main__animated-section');
+			}
+			else {
+				section.classList.remove('main__animated-section');
+			}	
 		}
 	}
 }

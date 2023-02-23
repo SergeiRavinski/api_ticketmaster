@@ -121,8 +121,15 @@
 }
 
 .main__events,
-.main__sports {
+.main__sports,
+.main__music {
 	scroll-margin: 5rem;
+	transform: translateY(5rem);
+	transition: transform 0.7s ease-in-out;
+}
+
+.main__animated-section {
+	transform: translateY(0);
 }
 
 .main__events-title,
