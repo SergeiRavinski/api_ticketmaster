@@ -39,6 +39,10 @@
 @media screen and (max-width: 600px) {
 
 	.main__mobile-navigation {
+		height: unset;
+	}
+
+	.main__mobile-navigation {
 		width: 50%;
 	}
 	

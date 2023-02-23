@@ -3,7 +3,7 @@
 	top: 0;
 	right: 0;
 	width: 30%;
-	height: 100vh;
+	height: 100%;
 	background: var(--primary-dark);
 	filter: drop-shadow(0.1rem 0.1rem 0.2rem var(--tertiary-dark));
 	z-index: 30;
