@@ -120,12 +120,15 @@
 	margin: 2.5vw 0;
 }
 
+.main__events-animate {
+	transform: translateY(5rem);
+	transition: transform 0.7s ease-in-out;
+}
+
 .main__events,
 .main__sports,
 .main__music {
-	scroll-margin: 5rem;
-	transform: translateY(5rem);
-	transition: transform 0.7s ease-in-out;
+	scroll-margin: 10rem;
 }
 
 .main__animated-section {
