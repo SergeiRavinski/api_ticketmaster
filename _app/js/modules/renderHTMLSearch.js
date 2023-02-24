@@ -1,3 +1,37 @@
+export default function renderHTMLSearch(dataSearch) {
+
+	const form = document.querySelector('form');
+	const search = document.querySelector('.header__logoandinput-input-field');
+	const sectionEventsAdd = document.querySelector('.main__sports-events');
+	form.addEventListener('submit', handleSearchInput);
+
+	function handleSearchInput() {
+		dataSearch.filter((event) => {
+
+			if (search.value) {
+				
+				const foundEvents = document.createElement('div');     
+				foundEvents.innerHTML = `
+					<div>
+						<button></button>
+						<a href="${event.url}">
+								<img src="${event.images[3].url}" alt="">
+						</a>
+						<span>
+								<h5>${event.name}</h5>
+								<h6>${event._embedded.venues[0].city.name}</h6>
+								<h6>Pris fra ${event.priceRanges[0].min} ${event.priceRanges[0].currency}</h6>
+								<h6>${event.dates.start.localDate}</h6>
+						</span>
+					</div>
+				`
+				sectionEventsAdd.appendChild(foundEvents); 
+				//search.value = '';
+			}  
+	  });
+	}
+}
+
 
 //const API_KEY = "8c8e1a50-6322-4135-8875-5d40a5420d86";
 //const API_URL_POPULAR =
