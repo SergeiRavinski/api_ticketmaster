@@ -1,9 +1,9 @@
 export default function renderHTMLSearch(dataSearch) {
 
-	const form = document.querySelector('form');
+	const searchButton = document.querySelector('.header__logoandinput-input-button');
 	const search = document.querySelector('.header__logoandinput-input-field');
 	const sectionEventsAdd = document.querySelector('.main__sports-events');
-	form.addEventListener('submit', handleSearchInput);
+	searchButton.addEventListener('click', handleSearchInput);
 
 	function handleSearchInput() {
 		dataSearch.filter((event) => {

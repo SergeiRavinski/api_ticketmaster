@@ -2,6 +2,17 @@ export default function renderHTMLEvents(data, type) {
 
 	let sectionEvents	= '';
 
+	const searchButton = document.querySelector('.header__logoandinput-input-button');
+	const search = document.querySelector('.header__logoandinput-input-field');
+	const sectionEventsAdd = document.querySelector('.main__sports-events');
+	searchButton.addEventListener('click', handleSearchInput);
+
+	function handleSearchInput() {
+		if(search.value ) {
+
+		}
+	}
+
 	if(type === 'music') {
 		sectionEvents = document.querySelector('.main__music-events');
 	}
