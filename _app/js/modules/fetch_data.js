@@ -21,6 +21,12 @@ export const filtering = (data, type) => {
     });
 }
 
+export const search = (data, city) => {
+    return data.filter(event => {
+        return event._embedded.venues[0].city.name === inputValue;
+    });
+}
+
 function handleError(error) {
 
 }
