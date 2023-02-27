@@ -14,5 +14,4 @@ export const fetchDataSearch = async () => {
 	} catch (error) {
 		 handleError(error);   
 	}
-	
 }

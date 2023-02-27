@@ -2,17 +2,6 @@ export default function renderHTMLEvents(data, type) {
 
 	let sectionEvents	= '';
 
-	const searchButton = document.querySelector('.header__logoandinput-input-button');
-	const search = document.querySelector('.header__logoandinput-input-field');
-	const sectionEventsAdd = document.querySelector('.main__sports-events');
-	searchButton.addEventListener('click', handleSearchInput);
-
-	function handleSearchInput() {
-		if(search.value ) {
-
-		}
-	}
-
 	if(type === 'music') {
 		sectionEvents = document.querySelector('.main__music-events');
 	}
@@ -22,7 +11,7 @@ export default function renderHTMLEvents(data, type) {
 	}
 
 	data.forEach((event) => {
-		 const newEvent = document.createElement('div');     
+		 const newEvent = document.createElement('div');   
 		 newEvent.innerHTML = `
 			  <div>
 					<button></button>
