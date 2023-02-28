@@ -20,15 +20,16 @@
 				</section>
 
 				<div class="header__logoandinput-input">
-					<form>
+					<form id="header__logoandinput-input-form">
 						<input 
 							class="header__logoandinput-input-field" 
 							type="text" 
 							placeholder="City, artist or genre">
+						<input 
+							type="submit"
+							id="search-event"
+							class="header__logoandinput-input-button">
 					</form>	
-					<button class="header__logoandinput-input-button">
-						<img src="./_app/assets/icons/Search_white.svg" alt="">
-					</button>
 				</div>
 
 				<nav class="header__navigation-mobile">
@@ -50,11 +51,15 @@
 
 		<main class="main">
 
+			<section class="main__search-window">
+				<section class="main__sports">
+					<h2 class="main__sports-title">Searched</h2>
+					<div class="main__sports-events"></div>
+				</section>
+			</section>
+
 			<section class="main__wishlist">
 				<div class="main__wishlist-items">
-					<div>
-						<img src="./_app/assets/images/Born_Of_Osiris_background.jpeg" alt="">
-					</div>
 					<div>
 						<img src="./_app/assets/images/Born_Of_Osiris_background.jpeg" alt="">
 					</div>
@@ -77,7 +82,6 @@
 			</section>
 
 			<div class="main__background"></div>
-			<!--<img class="main__background" src="./_app/assets/images/Veil_of_Maya.jpg" alt="">-->
 			<span class="main__title">
 				<h1>
 					If you love music,<br>you know how a great <br>concert can improve your mood. Music's the medicine of the mind.
@@ -114,11 +118,6 @@
 					</div>
 
 				</section>
-			</section>
-
-			<section class="main__sports main__events-animate">
-				<h2 class="main__sports-title">Filter</h2>
-				<div class="main__sports-events"></div>
 			</section>
 
 			<div class="main__underline-gray"></div>
