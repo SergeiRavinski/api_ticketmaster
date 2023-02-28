@@ -46,20 +46,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: var(--primary-dark);
 	border-right: solid .09rem var(--tertiary-dark);
 	border-top: solid .09rem var(--tertiary-dark);
 	border-bottom: solid .09rem var(--tertiary-dark);
-}
-
-.header__logoandinput-input-button:hover,
-.header__logoandinput-input-button:active {
-	background: var(--tertiary-dark);
-}
-
-.header__logoandinput-input-button img {
-	width: 1.5rem;
-	height: 1.5rem;
+	background: url(../../assets/icons/Search_white.svg) center / 1.5rem no-repeat;
+	cursor: pointer;
+	background-color: var(--primary-dark);
 }
 
 .header__logoandinput-input-field {
@@ -84,7 +76,7 @@
 }
 
 .header__logoandinput-input-field:focus {
-	background: var(--primary-light);
+	background: var(--secondary-light);
 	color: var(--tertiary-dark);
 }
 
