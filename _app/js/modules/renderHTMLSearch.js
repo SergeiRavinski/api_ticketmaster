@@ -4,11 +4,18 @@ export default function renderHTMLSearch(dataSearch) {
 	const inputField = document.querySelector('.header__logoandinput-input-field');
 	const sectionEventsAdd = document.querySelector('.main__sports-events');
 	const searchWindow = document.querySelector('.main__search-window');
+	const bodySearch = document.querySelector('html');
+
 	form.addEventListener('submit', handleSearchInput);
+	bodySearch.addEventListener('click', handleCloseSearchWindow);
+
+	function handleCloseSearchWindow() {
+		searchWindow.classList.remove('main__search-window--visible');
+	}
 
 	function handleSearchInput(event) {
 
-		searchWindow.style.display = 'block'; 
+		searchWindow.classList.add('main__search-window--visible');
 		event.preventDefault();
 		sectionEventsAdd.innerHTML = '';
 		
@@ -23,24 +30,37 @@ export default function renderHTMLSearch(dataSearch) {
 				event.classifications[0].genre.name === inputGenre) { 
 			
 				const foundEvents = document.createElement('div');     
-				foundEvents.innerHTML = `
-					<div>
-						<button></button>
-						<a href="${event.url}">
-								<img src="${event.images[3].url}" alt="">
-						</a>
-						<span>
-								<h5>${event.name}</h5>
-								<h6>${event._embedded.venues[0].city.name}</h6>
-								
-								<h6>${event.dates.start.localDate}</h6>
-						</span>
-					</div>
-				`
+				const newButton = document.createElement('button');
+				const newLink = document.createElement('a');
+				const newImg = document.createElement('img');
+				const newSpan = document.createElement('span');
+				const newHFive = document.createElement('h5');
+				const newHSixFirst = document.createElement('h6');
+				const newHSixSecond = document.createElement('h6');
+			
+				newImg.src = `${event.images[3].url}`;
+				newLink.href = `${event.url}`;
+				newHFive.textContent = `${event.name}`;
+				newHSixFirst.textContent = `${event._embedded.venues[0].city.name}`;
+				newHSixSecond.textContent = `${event.dates.start.localDate}`;
+		
+				foundEvents.append(
+					newButton,
+					newLink,
+					newSpan
+				);
+		
+				newLink.append(newImg);
+		
+				newSpan.append(
+					newHFive,
+					newHSixFirst,
+					newHSixSecond
+				);
+
 				sectionEventsAdd.appendChild(foundEvents); 
 				event._embedded.venues[0].city.name === '';
-			}
-			
+			}	
 		});	
 	}	
 }
