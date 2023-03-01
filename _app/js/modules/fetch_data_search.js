@@ -1,8 +1,8 @@
 export const fetchDataSearch = async () => {
-	//const apiKeySearch = 'WyccpB6oo7rfmkGMeApP2BriNGE68Y1j';
+	
 	const currentEventsSearch = 200;
 	const rootUrlSearch = `https://app.ticketmaster.com/discovery/v2`;
-	const endpointSearch = `${rootUrlSearch}/events?&apikey=${apiKeySearch}&size=${currentEventsSearch}&countryCode=no`;
+	const endpointSearch = `${rootUrlSearch}/events?&apikey=${apiKey}&size=${currentEventsSearch}&countryCode=no`;
 	
 	let responseSearch = '';
 	responseSearch = await fetch(endpointSearch);
@@ -16,4 +16,4 @@ export const fetchDataSearch = async () => {
 	}
 }
 
-import { apiKeySearch } from '../env.js';
+import { apiKey } from '../env.js';

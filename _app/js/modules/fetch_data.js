@@ -1,5 +1,5 @@
 export const fetchData = async () => {
-    
+
     const currentEvents = 200;
     const rootUrl = `https://app.ticketmaster.com/discovery/v2`;
     const endpoint = `${rootUrl}/events?&apikey=${apiKey}&countryCode=no&size=${currentEvents}`;
@@ -20,12 +20,6 @@ export const filtering = (data, type) => {
         return event.classifications[0].segment.name === type;
     });
 }
-
-//export const search = (data, city) => {
-//    return data.filter(event => {
-//        return event._embedded.venues[0].city.name === inputValue;
-//    });
-//}
 
 function handleError(error) {
 
