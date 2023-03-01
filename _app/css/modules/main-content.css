@@ -30,6 +30,11 @@
 	display: none;
 }
 
+.main__search-window--visible {
+	display: block;
+}
+
+
 .main__search-window::before {
 	opacity: 0.1;
 }
