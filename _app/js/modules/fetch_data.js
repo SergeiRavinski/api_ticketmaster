@@ -1,5 +1,5 @@
 export const fetchData = async () => {
-    //const apiKey = 'WyccpB6oo7rfmkGMeApP2BriNGE68Y1j'
+    
     const currentEvents = 200;
     const rootUrl = `https://app.ticketmaster.com/discovery/v2`;
     const endpoint = `${rootUrl}/events?&apikey=${apiKey}&countryCode=no&size=${currentEvents}`;
