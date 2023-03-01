@@ -179,6 +179,8 @@
 	font-size: 0.7rem;
 	position: relative;
 	overflow: hidden;
+	/*box-shadow: 15px 15px 30px #bebebe,
+	-15px -15px 30px #ffffff;*/
 }
 
 .main__events-events div button,
