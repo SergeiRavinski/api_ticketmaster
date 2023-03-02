@@ -1,17 +1,33 @@
 export const fetchData = async () => {
 
+    const warningElement = document.querySelector('.main__error');
     const currentEvents = 200;
-    const rootUrl = `https://app.ticketmaster.com/discovery/v2`;
-    const endpoint = `${rootUrl}/events?&apikey=${apiKey}&countryCode=no&size=${currentEvents}`;
+    const baseUrl = `https://app.ticketmaster.com/discovery/v2`;
+    const options = {
+        method: "GET",
+    }
+    const endpoint = `${baseUrl}/events?&apikey=${apiKey}&countryCode=no&size=${currentEvents}`;
 
     let response = '';
-    response = await fetch(endpoint);
+    response = await fetch(endpoint, options);
+
     try {
-        const result = await response.json();
-        const { events } = result._embedded;
-        return events;
+        if(response.ok) {
+            const result = await response.json();
+            const { events } = result._embedded;
+            return events;
+        }else if(response.status === 404) {
+            throw new Error('Url not existing');
+        }else if(response.status === 401) {
+            throw new Error('Not authorized user');
+        }else if(response.status >= 500) {
+            throw new Error('Server not responding');
+        }else {
+            throw new Error('Something went wrong');
+        }
     } catch (error) {
-        handleError(error);   
+            warningElement.classList.toggle('main__error--visible');
+            warningElement.textContent = error;
     }
 }
 
@@ -19,10 +35,6 @@ export const filtering = (data, type) => {
     return data.filter(event => {
         return event.classifications[0].segment.name === type;
     });
-}
-
-function handleError(error) {
-
 }
 
 import { apiKey } from '../env.js';
