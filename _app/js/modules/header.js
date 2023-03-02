@@ -14,6 +14,14 @@ export default function header() {
 	body.addEventListener('click', handleClickOverBody);
 	wishlist.addEventListener('click', handleClickOverWishlist);
 	mobileNavigation.addEventListener('click', handleClickOverMobileNavigation);
+	window.addEventListener('keydown', handleKeyDown);
+
+	function handleKeyDown(event) {
+		if(event.keyCode === 27) {
+			(isOpenedWishlist = false);
+			wishlist.classList.remove('main__wishlist--visible');
+		}
+	}
 
 	function visibilityHamburgerMenu() {
 		isOpenedNavigationMobile = !isOpenedNavigationMobile;
