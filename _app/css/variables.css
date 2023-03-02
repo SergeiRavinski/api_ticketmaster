@@ -24,6 +24,7 @@
 	--primary-dark: rgb(2, 108, 223);
 	--secondary-dark: #73808b;
 	--tertiary-dark: rgb(1, 48, 97);
+	--quaternary-dark: rgb(222, 0, 0);
 	--primary-light: #ffffff;
 	--secondary-light: #f4f5ef;
 
@@ -31,9 +32,8 @@
 
 	--grid-gap: 0.6rem;
 	--mobile-grid-gap: 2rem;
-	
 }
 
-:root[data-theme="light"] {
+/*:root[data-theme="light"] {
 	--secondary-light: rgb(2, 108, 223);
-}
+}*/

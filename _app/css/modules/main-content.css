@@ -3,6 +3,21 @@
 	margin: 0 10vw;
 }
 
+.main__error {
+	position: fixed;
+	display: block;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: var(--large-text-size);
+	color: var(--quaternary-dark);
+	z-index: 200;
+}
+
+.main__error--visible {
+	display: none;
+}
+
 .main__background {
 	position: absolute;
 	top: 0;
@@ -15,18 +30,18 @@
 	background-attachment: fixed;
 }
 
-.main__search-window {
+.main__search-window-element {
 	position: fixed;
 	display: block;
 	top: 50%;
 	left: 50%;
-	width: 70vw;
+	width: 80vw;
 	height: 100%;
 	background-color: var(--secondary-light);
 	filter: drop-shadow(0.01rem 0.01rem 0.7rem var(--tertiary-dark));
 	z-index: 8;
 	overflow: scroll;
-	padding: 5rem;
+	padding: 5vw;
 	transform: translate(-50%, -150%);
 	transition: transform 0.3s ease-in-out;
 }
@@ -151,10 +166,8 @@
 }
 
 .main__events,
-.main__sports,
-.main__music {
+.main__search-window-element {
 	scroll-margin: 10rem;
-
 }
 
 .main__animated-section {
@@ -163,14 +176,14 @@
 
 .main__events-title,
 .main__music-title,
-.main__sports-title {
+.main__search-window-element-title {
 	color: var(--primary-dark);
 	font-size: var(--medium-text-size);
 }
 
 .main__events-events,
 .main__music-events,
-.main__sports-events {
+.main__search-window-element-events {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: 0.5rem;
@@ -179,19 +192,19 @@
 
 .main__events-events div,
 .main__music-events div,
-.main__sports-events div {
+.main__search-window-element-events div {
 	min-width: 15vw;
 	min-height: 13vw;
 	font-size: 0.7rem;
 	position: relative;
 	overflow: hidden;
-	/*box-shadow: 15px 15px 30px #bebebe,
-	-15px -15px 30px #ffffff;*/
+	border-radius: 0.3rem;
+	box-shadow: 0.05rem 0.05rem 0.4rem var(--secondary-dark), -0.05rem -0.05rem 0.4rem var(--secondary-light);
 }
 
 .main__events-events div button,
 .main__music-events div button,
-.main__sports-events div button {
+.main__search-window-element-events div button {
 	position: absolute;
 	z-index: 20;
 	top: 1rem;
@@ -203,16 +216,17 @@
 
 .main__events-events div a,
 .main__music-events div a,
-.main__sports-events div a {
+.main__search-window-element-events div a {
 	display: flex;
 	overflow: hidden;
-	border-radius: 0.3rem;
+	border-top-left-radius: 0.3rem;
+	border-top-right-radius: 0.3rem;
 	margin-bottom: 0.2vw;
 }
 
 .main__events-events div a img,
 .main__music-events div a img,
-.main__sports-events div a img {
+.main__search-window-element-events div a img {
 	height: 200px;
 	object-fit: cover;
 	transition: 0.3s linear;	
@@ -220,35 +234,25 @@
 
 .main__events-events div a img:hover,
 .main__music-events div a img:hover,
-.main__sports-events div a img:hover {
+.main__search-window-element-events div a img:hover {
 	transform: scale(1.05);
 }
 
 .main__events-events div span h5,
 .main__music-events div span h5,
-.main__sports-events div span h5 {
+.main__search-window-element-events div span h5 {
+	padding: .05rem .2rem;
 	color: var(--primary-dark);
 	font-size: var(--small-text-size);
 }
 
 .main__events-events div span h6,
 .main__music-events div span h6,
-.main__sports-events div span h6 {
+.main__search-window-element-events div span h6 {
+	padding: .05rem .2rem;
 	color: var(--secondary-dark);
 	font-size: var(--extra-small-text-size);
 }
-
-/*.main__text-paragraph {
-	opacity: 0;
-	transform: translateY(5rem);
-	transition: 0.5s all ease-in-out;
-	font-size: var(--medium-text-size);
-}*/
-
-/*.main__text-animated {
-	opacity: 1;
-	transform: translateY(0px);
-}*/
 
 .main__button-scroll-up {
 	position: fixed;
@@ -281,6 +285,11 @@
 
 .main__button-scroll-up--visible {
 	display: block;
+}
+
+.stop-scrolling {
+	height: 100%;
+	overflow: hidden;
 }
 
 @media only screen and (max-width: 992px) {
@@ -333,17 +342,33 @@
 		margin: 0 2.5vw;
 	}
 
+	.main__categories-items {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) ;
+	}
+
 	.main__categories-items-concerts,
 	.main__categories-items-sports,
 	.main__categories-items-artandtheater,
 	.main__categories-items-family {
-		height: 280px;
+		height: 180px;
+	}
+
+	.main__events-events,
+	.main__music-events,
+	.main__search-window-element-events {
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 	}
 
 	.main__events-events div a img,
 	.main__music-events div a img {
-		height: 250px;
+		height: 150px;
 		object-fit: cover;
 		transition: 0.3s linear;	
+	}
+
+	.main__events-events div span h5,
+	.main__music-events div span h5,
+	.main__search-window-element-events div span h5 {
+		font-size: var(--extra-small-text-size);
 	}
 }
