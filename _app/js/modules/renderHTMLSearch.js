@@ -2,32 +2,41 @@ export default function renderHTMLSearch(dataSearch) {
 
 	const form = document.getElementById('header__logoandinput-input-form');
 	const inputField = document.querySelector('.header__logoandinput-input-field');
-	const sectionEventsAdd = document.querySelector('.main__sports-events');
-	const searchWindow = document.querySelector('.main__search-window');
-	const bodySearch = document.querySelector('html');
+	const sectionEventsAdd = document.querySelector('.main__search-window-element-events');
+	const searchWindow = document.querySelector('.main__search-window-element');
+	const mainSection = document.querySelector('body');
 
 	form.addEventListener('submit', handleSearchInput);
-	bodySearch.addEventListener('click', handleCloseSearchWindow);
+	mainSection.addEventListener('click', handleCloseSearchWindow);
+	window.addEventListener('keydown', handleKeyDown);
 
-	function handleCloseSearchWindow() {
+	function handleKeyDown(event) {
+		if(event.keyCode === 27) {
+			searchWindow.classList.remove('main__search-window--visible');
+			mainSection.classList.remove('stop-scrolling');
+		}
+	}
+
+	function handleCloseSearchWindow(event) {
+		event.stopPropagation();
 		searchWindow.classList.remove('main__search-window--visible');
+		mainSection.classList.remove('stop-scrolling');
 	}
 
 	function handleSearchInput(event) {
 
 		searchWindow.classList.add('main__search-window--visible');
 		event.preventDefault();
+		mainSection.classList.add('stop-scrolling');
 		sectionEventsAdd.innerHTML = '';
 		
-		let inputCity = inputField.value.charAt(0).toUpperCase() + inputField.value.slice(1);
-		let inputArtist = inputField.value.charAt(0).toUpperCase() + inputField.value.slice(1);
-		let inputGenre = inputField.value.charAt(0).toUpperCase() + inputField.value.slice(1);
+		let input = inputField.value.charAt(0).toUpperCase() + inputField.value.slice(1);
 
 		dataSearch.filter((event) => {
 			
-			if (event._embedded.venues[0].city.name === inputCity ||
-				event.name === inputArtist	||
-				event.classifications[0].genre.name === inputGenre) { 
+			if (event._embedded.venues[0].city.name === input ||
+				event.name === input	||
+				event.classifications[0].genre.name === input) { 
 			
 				const foundEvents = document.createElement('div');     
 				const newButton = document.createElement('button');
