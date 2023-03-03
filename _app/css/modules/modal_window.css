@@ -58,7 +58,7 @@
 	font-weight: bold;
 }
 
-#main__modal-window-card-button-close {
+.main__modal-window-card-button-close {
 	display: flex;
 	justify-content: center;
 	position: absolute;
@@ -106,7 +106,8 @@
 }
 
 .main__modal-window-card-button-buy {
-	display: block;
+	display: flex;
+	justify-content: center;
 	background: var(--primary-dark);
 	color: var(--secondary-light);
 	border-radius: 0.3rem;
@@ -116,6 +117,6 @@
 }
 
 .main__modal-window-card-button-buy:hover,
-#main__modal-window-card-button-close:hover {
+.main__modal-window-card-button-close:hover {
 	background: var(--tertiary-dark);
 }
