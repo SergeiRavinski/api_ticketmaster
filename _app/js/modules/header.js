@@ -20,6 +20,7 @@ export default function header() {
 		if(event.keyCode === 27) {
 			(isOpenedWishlist = false);
 			wishlist.classList.remove('main__wishlist--visible');
+			buttonWishlist.classList.remove('header__navigation-wishlist--active');
 		}
 	}
 
@@ -55,7 +56,7 @@ export default function header() {
 	}
 
 	function renderHTMLMenu() {
-		if (isOpenedNavigationMobile === true) {
+		if (isOpenedNavigationMobile) {
 			(isOpenedWishlist = false);
 			buttonHamburgerMenu.classList.add('open');
 			mobileNavigation.classList.add('main__mobile-navigation--visible')
@@ -69,7 +70,7 @@ export default function header() {
 	}
 
 	function renderHTMLWishlist() {
-		if (isOpenedWishlist === true) {
+		if (isOpenedWishlist) {
 			(isOpenedNavigationMobile = false);
 			wishlist.classList.add('main__wishlist--visible');
 			buttonWishlist.classList.add('header__navigation-wishlist--active');

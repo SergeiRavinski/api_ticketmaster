@@ -1,0 +1,106 @@
+.main__modal-window {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(1, 48, 97, 0.5);
+}
+
+.main__modal-window-card {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	max-height: 80%;
+	background-color: var(--secondary-light);
+	padding: 0.5vw;
+	border-radius: 0.3rem;
+	overflow: scroll;
+	filter: drop-shadow(0.5rem 0.5rem 2rem var(--tertiary-dark));
+}
+
+.main__modal-window-card-first-section {
+	display: flex;
+	flex-direction: row;
+	gap: 1vw;
+}
+
+.main__modal-window-card-first-section-image,
+.main__modal-window-card-first-section-info {
+	width: 50%;
+}
+
+.main__modal-window-card-first-section-info h5 {
+	padding: .05rem .2rem;
+	color: var(--primary-dark);
+	font-size: var(--medium-text-size);
+}
+
+.main__modal-window-card-first-section-info h6 {
+	padding: .05rem .2rem;
+	color: var(--secondary-dark);
+	font-size: var(--extra-small-text-size);
+}
+
+#main__modal-window-card-button-close {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 0.5vw;
+	right: 0.5vw;
+	width: 3rem;
+	height: 3rem;
+	background: var(--primary-dark);
+	color: var(--secondary-light);
+	border-radius: 0.3rem;
+	font-size: var(--small-text-size);
+	padding: 0.7rem;
+}
+
+.main__modal-window-card-second-section {
+	margin-top: 1vw;
+	display: flex;
+	flex-direction: row;
+	gap: 1vw;
+}
+
+.main__modal-window-card-second-section-image,
+.main__modal-window-card-second-section-address {
+	width: 50%;
+}
+
+.main__modal-window-card-first-section-image img,
+.main__modal-window-card-second-section-image img {
+	border-radius: 0.3rem;
+}
+
+.main__modal-window-card-second-section-address h5 {
+	padding: .05rem .2rem;
+	color: var(--primary-dark);
+	font-size: var(--small-text-size);
+}
+
+.main__modal-window-card-second-section-address h6 {
+	padding: .05rem .2rem;
+	color: var(--secondary-dark);
+	font-size: var(--extra-small-text-size);
+}
+
+.main__modal-window-card-button-buy {
+	display: block;
+	background: var(--primary-dark);
+	color: var(--secondary-light);
+	border-radius: 0.3rem;
+	margin-top: 0.5vw;
+	padding: 1rem;
+	font-size: var(--small-text-size);
+}
+
+.main__modal-window-card-button-buy:hover,
+#main__modal-window-card-button-close:hover {
+	background: var(--tertiary-dark);
+}
