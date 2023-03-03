@@ -7,11 +7,11 @@ export default function header() {
 	const buttonWishlist = document.querySelector('.header__navigation-wishlist');
 	const mobileNavigation = document.querySelector('.main__mobile-navigation');
 	const wishlist = document.querySelector('.main__wishlist');
-	const body = document.querySelector('.main');
+	const main = document.querySelector('.main');
 
 	buttonHamburgerMenu.addEventListener('click', handleButtonHamburgerMenu);
 	buttonWishlist.addEventListener('click', handleButtonWishlist);
-	body.addEventListener('click', handleClickOverBody);
+	main.addEventListener('click', handleClickOverBody);
 	wishlist.addEventListener('click', handleClickOverWishlist);
 	mobileNavigation.addEventListener('click', handleClickOverMobileNavigation);
 	window.addEventListener('keydown', handleKeyDown);
