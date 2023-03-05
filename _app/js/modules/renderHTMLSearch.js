@@ -40,6 +40,7 @@ export default function renderHTMLSearch(dataSearch) {
 			
 				const foundEvents = document.createElement('div');     
 				const newButton = document.createElement('button');
+				newButton.className = 'main__search-window-like-button';
 				const newLink = document.createElement('a');
 				const newImg = document.createElement('img');
 				const newSpan = document.createElement('span');
