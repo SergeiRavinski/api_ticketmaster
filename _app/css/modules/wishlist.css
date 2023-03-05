@@ -26,6 +26,29 @@
 
 .main__wishlist-items div {
 	margin-bottom: 1vw;
+	position: relative;
+}
+
+.main__wishlist-items div button {
+	position: absolute;
+	z-index: 300;
+	top: 1rem;
+	right: 1rem;
+	height: 1.5rem;
+	width: 1.5rem;
+	background: url(../../assets/icons/heart-red.svg) center / contain no-repeat;
+}
+
+.main__wishlist-items div h5 {
+	padding: .05rem .2rem;
+	color: var(--secondary-light);
+	font-size: var(--small-text-size);
+}
+
+.main__wishlist-items div h6 {
+	padding: .05rem .2rem;
+	color: var(--secondary-light);
+	font-size: var(--extra-small-text-size);
 }
 
 @media only screen and (max-width: 992px) {
