@@ -1,8 +1,8 @@
 export default function renderHTMLEvents(data, type) {
 
-	const modalWindow = document.querySelector('.main__modal-window');
-
 	let sectionEvents	= '';
+	let modalWindow = document.querySelector('.main__modal-window');
+	let addedEventToWishlist = false;
 
 	if(type === 'music') {
 		sectionEvents = document.querySelector('.main__music-events');
@@ -16,6 +16,7 @@ export default function renderHTMLEvents(data, type) {
 
 		const newDiv = document.createElement('div');
 		const newButton = document.createElement('button');
+		newButton.className = 'main__events-events-like-button';
 		const newLink = document.createElement('a');
 		const newImg = document.createElement('img');
 		const newSpan = document.createElement('span');
@@ -44,35 +45,48 @@ export default function renderHTMLEvents(data, type) {
 		);
 
 		newLink.addEventListener('click', () => {
-			openModalWindow(event)
+			openModalWindow(event);
 		});
 
+		function addedToWishlist() {
+			addedEventToWishlist = !addedEventToWishlist;
+		};
+
+		newButton.addEventListener('click', hadndleClickLikeButton);
+		function hadndleClickLikeButton(eventLike) {
+			eventLike.stopPropagation();
+			addedToWishlist();
+			changeLikeButton();
+			handleButtonAddToWishlist(event);
+		}
+
+		function changeLikeButton() {
+			if(addedEventToWishlist === true) {
+				newButton.classList.add('main__events-events-like-button--addedtowishlist');
+			} else {
+				newButton.classList.remove('main__events-events-like-button--addedtowishlist');
+			}
+		}
+	
 		sectionEvents.appendChild(newDiv);   
 	});
 
 	function openModalWindow(event) {
 
-		
-
 		if(modalWindow) {
 			modalWindow.classList.add('main__modal-window--visible');
 		}		
-		//console.log(event)
 
 		const newDivModalWindow = document.createElement('div');
 		newDivModalWindow.className = 'main__modal-window-card';
-
 		const newDivModalWindowFirstSection = document.createElement('div');
 		newDivModalWindowFirstSection.className = 'main__modal-window-card-first-section';
-
 		const newDivModalWindowFirstSectionImage = document.createElement('div');
 		newDivModalWindowFirstSectionImage.className = 'main__modal-window-card-first-section-image';
-
 		const newDivModalWindowFirstSectionImageElement = document.createElement('img');
 		newDivModalWindowFirstSectionImageElement.src = `${event.images[2].url}`;
 		const newDivModalWindowFirstSectionInfo = document.createElement('span');
 		newDivModalWindowFirstSectionInfo.className = 'main__modal-window-card-first-section-info';
-
 		const newDivModalWindowFirstSectionInfoHFive = document.createElement('h5');
 		newDivModalWindowFirstSectionInfoHFive.innerText = `${event.name}`;
 		const newDivModalWindowFirstSectionInfoHSixFirst = document.createElement('h6');
@@ -81,28 +95,23 @@ export default function renderHTMLEvents(data, type) {
 		newDivModalWindowFirstSectionInfoHSixSecond.innerText = `Price: ${event.priceRanges[0].min} - ${event.priceRanges[0].max} NOK`;
 		const newDivModalWindowFirstSectionButtonClose = document.createElement('button');
 		newDivModalWindowFirstSectionButtonClose.className = 'main__modal-window-card-button-close';
-
 		const newDivModalWindowFirstSectionButtonCloseIcon = document.createElement('img');
 		newDivModalWindowFirstSectionButtonCloseIcon.src = './_app/assets/icons/close_modal_window.svg';
 		const newDivModalWindowSecondSection = document.createElement('div');
 		newDivModalWindowSecondSection.className = 'main__modal-window-card-second-section';
-
 		const newDivModalWindowSecondSectionSpan = document.createElement('span');
 		newDivModalWindowSecondSectionSpan.className = 'main__modal-window-card-second-section-address';
-
 		const newDivModalWindowSecondSectionSpanHFive = document.createElement('h5');
 		newDivModalWindowSecondSectionSpanHFive.innerText = `Venue: ${event._embedded.venues[0].name}`;
 		const newDivModalWindowSecondSectionSpanHSix = document.createElement('h6');
 		newDivModalWindowSecondSectionSpanHSix.innerText = `Address: ${event._embedded.venues[0].address.line1}`;
 		const newDivModalWindowSecondSectionImage = document.createElement('div');
 		newDivModalWindowSecondSectionImage.className = 'main__modal-window-card-second-section-image';
-
 		const newDivModalWindowSecondSectionImageElement = document.createElement('img');
 		newDivModalWindowSecondSectionImageElement.src = './_app/assets/images/map.jpeg';
 		const newDivModalWindowSecondSectionLinkBuy = document.createElement('a');
 		newDivModalWindowSecondSectionLinkBuy.href = `${event.url}`;
 		newDivModalWindowSecondSectionLinkBuy.className = 'main__modal-window-card-button-buy';
-
 		const newDivModalWindowSecondSectionButton = document.createElement('button');
 		newDivModalWindowSecondSectionButton.innerText = 'Buy tickets';
 
@@ -139,46 +148,13 @@ export default function renderHTMLEvents(data, type) {
 
 		newDivModalWindowSecondSectionImage.appendChild(newDivModalWindowSecondSectionImageElement);
 		newDivModalWindowSecondSectionLinkBuy.appendChild(newDivModalWindowSecondSectionButton);	
-
 		modalWindow.appendChild(newDivModalWindow);
 		
-
-		//modalWindow.innerHTML = `
-		//	<div class="main__modal-window-card">
-		//		<div class="main__modal-window-card-first-section">
-		//			<div class="main__modal-window-card-first-section-image">
-		//				<img src="${event.images[2].url}" alt="image">
-		//			</div>
-		//			<span class="main__modal-window-card-first-section-info">
-		//				<h5>${event.name}</h5>
-		//				<h6>Date: ${event.dates.start.localDate}</h6>
-		//				<h6>Price: ${event.priceRanges[0].min} NOK - ${event.priceRanges[0].max} NOK</h6>
-		//			</span>
-		//		</div>
-		//		<button class="main__modal-window-card-button-close">
-		//			<img src="./_app/assets/icons/close_modal_window.svg" alt="">
-		//		</button>
-
-		//		<div class="main__modal-window-card-second-section">
-		//			<span class="main__modal-window-card-second-section-address">
-		//				<h5>Venue: ${event._embedded.venues[0].name}</h5>
-		//				<h6>Address: ${event._embedded.venues[0].address.line1}</h6>
-		//			</span>
-		//			<div class="main__modal-window-card-second-section-image">
-		//				<img src="./_app/assets/images/map.jpeg" alt="map">
-		//			</div>	
-		//		</div>
-		//		<a class="main__modal-window-card-button-buy" href="${event.url}">
-		//			<button>Buy tickets</button>
-		//		</a>
-		//	</div>
-		//`
 		newDivModalWindowFirstSectionButtonClose.addEventListener('click', handleCloseModalWindow);
 	}
 
 	function handleCloseModalWindow() {
 		modalWindow.classList.remove('main__modal-window--visible');
-
 	}
 
 	window.addEventListener('keydown', handleCloseModalWindowEscape);
@@ -186,5 +162,34 @@ export default function renderHTMLEvents(data, type) {
 	function handleCloseModalWindowEscape(event) {
 		if (event.keyCode === 27)
 		modalWindow.classList.remove('main__modal-window--visible');
+	}
+
+	function handleButtonAddToWishlist(event) {
+
+		if (addedEventToWishlist === true) {
+
+			const wishlistItems = document.querySelector('.main__wishlist-items');
+			const newDivWishlist = document.createElement('div');
+			const newButtonWishlist = document.createElement('button');
+			const newImageWishlist = document.createElement('img');
+			const newTitleWishlist = document.createElement('h5');
+			const newHFemWishlist = document.createElement('h6');
+
+			newDivWishlist.append(
+				newButtonWishlist,
+				newImageWishlist,
+				newTitleWishlist,
+				newHFemWishlist
+			)
+
+			newImageWishlist.src = `${event.images[2].url}`;
+			newTitleWishlist.textContent = `${event.name}`;
+			newHFemWishlist.textContent = `${event.dates.start.localDate}`;
+
+			wishlistItems.appendChild(newDivWishlist);
+		}	
+		else {
+			//wishlistItems.removeChild(newDivWishlist);
+		}
 	}
 }   
