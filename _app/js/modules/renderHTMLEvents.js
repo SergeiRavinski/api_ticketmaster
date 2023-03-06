@@ -1,3 +1,5 @@
+import { t_map } from "../env.js";
+
 export default function renderHTMLEvents(data, type) {
 
 	let sectionEvents	= '';
@@ -95,8 +97,35 @@ export default function renderHTMLEvents(data, type) {
 		divModalWindowSecondSectionSpanHFive.textContent = `Venue: ${event._embedded.venues[0].name}`;
 		divModalWindowSecondSectionSpanHSix.textContent = `Address: ${event._embedded.venues[0].address.line1}`;
 		divModalWindowSecondSectionLinkBuy.href = `${event.url}`;
+
+		//mapbox
+		const center = [`${event._embedded.venues[0].location.longitude}`, `${event._embedded.venues[0].location.latitude}`];
+		mapboxgl.accessToken = t_map;
 		
-		modalWindow.appendChild(newDivModalWindow);
+		const map = new mapboxgl.Map({
+			container: 'main__modal-window-card-second-section-image', 
+			style: 'mapbox://styles/mapbox/streets-v12',
+			center: center,
+			zoom: 10,
+		});
+
+		const markerElement = document.createElement('div');
+		markerElement.classList.add('marker');
+
+		new mapboxgl.Marker(markerElement)
+			.setLngLat(center)
+			.addTo(map);
+
+		markerElement.addEventListener('click', () => {
+			map.flyTo({
+				center: center,
+				essential: true,
+				zoom: 14,
+			});
+		});
+
+		map.addControl(new mapboxgl.FullscreenControl());
+		map.addControl(new mapboxgl.NavigationControl());
 	}
 
 	divModalWindowFirstSectionButtonClose.addEventListener('click', handleCloseModalWindow);
