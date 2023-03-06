@@ -4,6 +4,14 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>SrEvents</title>
+
+		<link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet">
+		<script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+
+		<script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+  
+		<link rel="stylesheet" href="./_app/css/main.css">
+		<script type="module" src="./_app/js/main.js"></script>
 		<link rel="stylesheet" href="./_app/css/main.css">
 		<script type="module" src="./_app/js/main.js"></script>
 	</head>
@@ -127,13 +135,52 @@
 
 			<div class="main__underline-gray"></div>
 
-			<section class="main__modal-window"></section>
+
+
+
+
+			<section class="main__modal-window">
+
+				<div class="main__modal-window-card">
+					<div class="main__modal-window-card-first-section">
+						<div class="main__modal-window-card-first-section-image">
+								<img src="" alt="image">
+						</div>
+						<span class="main__modal-window-card-first-section-info">
+							<h5></h5>
+							<h6></h6>
+							<h6></h6>
+						</span>
+					</div>
+					<button class="main__modal-window-card-button-close">
+						<img src="./_app/assets/icons/close_modal_window.svg" alt="">
+					</button>
+	
+					<div class="main__modal-window-card-second-section">
+						<span class="main__modal-window-card-second-section-address">
+							<h5></h5>
+							<h6></h6>
+						</span>
+						<div class="main__modal-window-card-second-section-image"></div>	
+					</div>
+					<a class="main__modal-window-card-button-buy" href="">
+						<button>Buy tickets</button>
+					</a>
+				</div>
+				
+			</section>
+
+
+			<div id="map"></div>
+
 
 			<p class="main__error main__error--visible"></p>
 
 			<button class="main__button-scroll-up">
 				<img src="./_app/assets/icons/Arrow_up_blue.svg" alt="arrow up">
 			</button>
+
+			
 		</main>
 
 		<footer class="footer">
