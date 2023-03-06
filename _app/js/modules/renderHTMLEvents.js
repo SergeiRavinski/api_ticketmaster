@@ -13,8 +13,10 @@ export default function renderHTMLEvents(data, type) {
 	const divModalWindowFirstSectionButtonClose = document.querySelector('.main__modal-window-card-button-close');
 	const divModalWindowSecondSectionSpanHFive = document.querySelector('.main__modal-window-card-second-section-address h5');
 	const divModalWindowSecondSectionSpanHSix = document.querySelector('.main__modal-window-card-second-section-address h6');
-	const divModalWindowSecondSectionImage = document.querySelector('.main__modal-window-card-second-section-image');		
 	const divModalWindowSecondSectionLinkBuy = document.querySelector('.main__modal-window-card-button-buy');
+
+	divModalWindowFirstSectionButtonClose.addEventListener('click', handleCloseModalWindow);
+	window.addEventListener('keydown', handleCloseModalWindowEscape);
 
 	if(type === 'music') {
 		sectionEvents = document.querySelector('.main__music-events');
@@ -128,13 +130,9 @@ export default function renderHTMLEvents(data, type) {
 		map.addControl(new mapboxgl.NavigationControl());
 	}
 
-	divModalWindowFirstSectionButtonClose.addEventListener('click', handleCloseModalWindow);
-
 	function handleCloseModalWindow() {
 		modalWindow.classList.remove('main__modal-window--visible');
 	}
-
-	window.addEventListener('keydown', handleCloseModalWindowEscape);
 
 	function handleCloseModalWindowEscape(event) {
 		if (event.keyCode === 27)
