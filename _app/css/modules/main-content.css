@@ -3,6 +3,16 @@
 	margin: 0 10vw;
 }
 
+#map {
+	width: 80vw;
+	height: 40vh;
+	display: flex;
+	align-self: center;
+	justify-self: content;
+	z-index: 500;
+	margin-bottom: 2rem;
+}
+
 .main__error {
 	position: fixed;
 	display: block;

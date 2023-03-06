@@ -120,3 +120,12 @@
 .main__modal-window-card-button-close:hover {
 	background: var(--tertiary-dark);
 }
+
+.marker {
+	width: 3rem;
+	height: 3rem;
+	background: url(../../assets/icons/location-indicator-red.svg);
+	cursor: pointer;
+	padding: 0;
+	background-size: contain;
+}
