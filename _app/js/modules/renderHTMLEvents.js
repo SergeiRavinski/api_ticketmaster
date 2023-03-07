@@ -153,15 +153,15 @@ export default function renderHTMLEvents(data, type) {
 
 	function handleButtonAddToWishlist(event) {
 
-		const wishlistItems = document.querySelector('.main__wishlist-items');
-		const newDivWishlist = document.createElement('div');
-		const newButtonWishlist = document.createElement('button');
-		const newImageWishlist = document.createElement('img');
-		const newTitleWishlist = document.createElement('h5');
-		const newHFemWishlist = document.createElement('h6');
-
 		if (addedEventToWishlist === true) {
 
+			const wishlistItems = document.querySelector('.main__wishlist-items');
+			const newDivWishlist = document.createElement('div');
+			const newButtonWishlist = document.createElement('button');
+			const newImageWishlist = document.createElement('img');
+			const newTitleWishlist = document.createElement('h5');
+			const newHFemWishlist = document.createElement('h6');
+	
 			newDivWishlist.append(
 				newButtonWishlist,
 				newImageWishlist,
@@ -178,9 +178,10 @@ export default function renderHTMLEvents(data, type) {
 			newHFemWishlist.textContent = `${event.dates.start.localDate}`;
 
 			wishlistItems.appendChild(newDivWishlist);
-		}	
+		}
+
 		else {
-			//wishlistItems.remove()
+			wishlistItems.removeChild(newDivWishlist);
 		}
 	}
 }   

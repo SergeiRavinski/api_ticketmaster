@@ -89,7 +89,7 @@
 
 #main__modal-window-card-second-section-image {
 	width: 50%;
-	height: 16.5vw;
+	min-height: 16.5vw;
 	border-radius: 0.3rem;
 }
 
@@ -133,4 +133,40 @@
 	cursor: pointer;
 	padding: 0;
 	background-size: contain;
+}
+
+@media only screen and (max-width: 992px) {
+
+	.main__modal-window-card {
+		width: 70%;
+		max-height: 80%;
+	}
+	
+	.main__modal-window-card-first-section-info h5 {
+		padding: .02rem .05rem;
+		
+		font-size: var(--small-text-size);
+	}
+	
+	.main__modal-window-card-first-section-info h6 {
+		padding: .02rem .05rem;
+	}
+}	
+
+@media only screen and (max-width: 600px) {
+
+	.main__modal-window-card {
+		width: 95%;
+		max-height: 80%;
+	}
+	
+	.main__modal-window-card-first-section-info h5 {
+		padding: .02rem .05rem;
+		
+		font-size: var(--small-text-size);
+	}
+	
+	.main__modal-window-card-first-section-info h6 {
+		padding: .02rem .05rem;
+	}
 }
