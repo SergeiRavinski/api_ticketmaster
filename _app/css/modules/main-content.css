@@ -386,6 +386,11 @@
 		height: 180px;
 	}
 
+	.main__search-window-element {
+		width: 90vw;
+		padding: 6vw 3vw;
+	}
+
 	.main__events-events,
 	.main__music-events,
 	.main__search-window-element-events {
@@ -393,7 +398,8 @@
 	}
 
 	.main__events-events div a img,
-	.main__music-events div a img {
+	.main__music-events div a img,
+	.main__search-window-element-events div a img {
 		height: 150px;
 		object-fit: cover;
 		transition: 0.3s linear;	
