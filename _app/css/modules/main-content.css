@@ -375,6 +375,10 @@
 		margin: 0 2.5vw;
 	}
 
+	.main__categories {
+		margin-top: 3rem;
+	}
+
 	.main__categories-items {
 		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) ;
 	}

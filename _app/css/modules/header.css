@@ -240,10 +240,18 @@
 	.header__logoandinput {
 		position: relative;
 	}
-	
+
 	.header__logoandinput-input {
 		position: absolute;
+		top: 2.5rem;
+		left: 50%;
+		transform: translateX(-50%);
 		height: 100%;
+		max-width: 100%;
+	}
+
+	.header__logoandinput-input-button {
+		position: absolute;
 	}
 }
 
