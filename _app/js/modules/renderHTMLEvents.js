@@ -37,9 +37,12 @@ export default function renderHTMLEvents(data, type) {
 		const newHFive = document.createElement('h5');
 		const newHSixFirst = document.createElement('h6');
 		const newHSixSecond = document.createElement('h6');
-	
-		newImg.src = `${event.images[2].url}`;
-		//newLink.href = `${event.url}`;
+
+		event.images.forEach((image) => {
+			if (image.width >= 500 && image.width <= 800) {
+				newImg.src = `${image.url}`;
+			}
+		});
 		newHFive.textContent = `${event.name}`;
 		newHSixFirst.textContent = `${event._embedded.venues[0].city.name}`;
 		newHSixSecond.textContent = `${event.dates.start.localDate}`;
@@ -92,7 +95,11 @@ export default function renderHTMLEvents(data, type) {
 			modalWindow.classList.add('main__modal-window--visible');
 		}
 
-		divModalWindowFirstSectionImageElement.src = `${event.images[2].url}`;
+		event.images.forEach((image) => {
+			if (image.width >= 500 && image.width <= 800) {
+				divModalWindowFirstSectionImageElement.src = `${image.url}`;
+			}
+		});
 		divModalWindowFirstSectionInfoHFive.textContent = `${event.name}`;
 		divModalWindowFirstSectionInfoHSixFirst.textContent = `Date: ${event.dates.start.localDate}`;
 		divModalWindowFirstSectionInfoHSixSecond.textContent = `Price: ${event.priceRanges[0].min} NOK - ${event.priceRanges[0].max} NOK`;

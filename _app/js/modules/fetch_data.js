@@ -6,7 +6,7 @@ export const fetchData = async () => {
     const options = {
         method: "GET",
     }
-    const endpoint = `${baseUrl}/events?&apikey=${apiKey}&countryCode=no&size=${currentEvents}`;
+    const endpoint = `${baseUrl}/events?&apikey=${apiKey}&locale=*&countryCode=no&size=${currentEvents}`;
 
     let response = '';
     response = await fetch(endpoint, options);

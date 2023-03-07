@@ -48,7 +48,11 @@ export default function renderHTMLSearch(dataSearch) {
 				const newHSixFirst = document.createElement('h6');
 				const newHSixSecond = document.createElement('h6');
 			
-				newImg.src = `${event.images[3].url}`;
+				event.images.forEach((image) => {
+					if (image.width >= 400 && image.width <= 800) {
+						newImg.src = `${image.url}`;
+					}
+				});
 				newLink.href = `${event.url}`;
 				newHFive.textContent = `${event.name}`;
 				newHSixFirst.textContent = `${event._embedded.venues[0].city.name}`;
