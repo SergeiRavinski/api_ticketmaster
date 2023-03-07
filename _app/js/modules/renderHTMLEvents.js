@@ -14,6 +14,7 @@ export default function renderHTMLEvents(data, type) {
 	const divModalWindowSecondSectionSpanHFive = document.querySelector('.main__modal-window-card-second-section-address h5');
 	const divModalWindowSecondSectionSpanHSix = document.querySelector('.main__modal-window-card-second-section-address h6');
 	const divModalWindowSecondSectionLinkBuy = document.querySelector('.main__modal-window-card-button-buy');
+	const body = document.querySelector('body');
 
 	divModalWindowFirstSectionButtonClose.addEventListener('click', handleCloseModalWindow);
 	window.addEventListener('keydown', handleCloseModalWindowEscape);
@@ -85,14 +86,16 @@ export default function renderHTMLEvents(data, type) {
 			}
 		}
 	
-		sectionEvents.appendChild(newDiv);   
+		sectionEvents.appendChild(newDiv);  
 	});
+	
 
 	function openModalWindow(event) {
-
+	
 		if(modalWindow) {
 
 			modalWindow.classList.add('main__modal-window--visible');
+			body.classList.add('stop-scrolling');
 		}
 
 		event.images.forEach((image) => {
@@ -139,11 +142,13 @@ export default function renderHTMLEvents(data, type) {
 
 	function handleCloseModalWindow() {
 		modalWindow.classList.remove('main__modal-window--visible');
+		body.classList.remove('stop-scrolling');
 	}
 
 	function handleCloseModalWindowEscape(event) {
 		if (event.keyCode === 27)
 		modalWindow.classList.remove('main__modal-window--visible');
+		body.classList.remove('stop-scrolling');
 	}
 
 	function handleButtonAddToWishlist(event) {
@@ -164,7 +169,11 @@ export default function renderHTMLEvents(data, type) {
 				newHFemWishlist
 			)
 
-			newImageWishlist.src = `${event.images[2].url}`;
+			event.images.forEach((image) => {
+				if (image.width >= 500 && image.width <= 800) {
+					newImageWishlist.src = `${image.url}`;
+				}
+			});
 			newTitleWishlist.textContent = `${event.name}`;
 			newHFemWishlist.textContent = `${event.dates.start.localDate}`;
 

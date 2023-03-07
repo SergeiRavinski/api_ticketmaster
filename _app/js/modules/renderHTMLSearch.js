@@ -1,7 +1,7 @@
 export default function renderHTMLSearch(dataSearch) {
 
 	const form = document.getElementById('header__logoandinput-input-form');
-	const inputField = document.querySelector('.header__logoandinput-input-field');
+	let inputField = document.querySelector('.header__logoandinput-input-field');
 	const sectionEventsAdd = document.querySelector('.main__search-window-element-events');
 	const searchWindow = document.querySelector('.main__search-window-element');
 	const mainSection = document.querySelector('body');
@@ -24,14 +24,14 @@ export default function renderHTMLSearch(dataSearch) {
 	}
 
 	function handleSearchInput(event) {
+		
+		let input = inputField.value.charAt(0).toUpperCase() + inputField.value.slice(1);
 
 		searchWindow.classList.add('main__search-window--visible');
 		event.preventDefault();
 		mainSection.classList.add('stop-scrolling');
 		sectionEventsAdd.innerHTML = '';
 		
-		let input = inputField.value.charAt(0).toUpperCase() + inputField.value.slice(1);
-
 		dataSearch.filter((event) => {
 			
 			if (event._embedded.venues[0].city.name === input ||
@@ -73,8 +73,8 @@ export default function renderHTMLSearch(dataSearch) {
 				);
 
 				sectionEventsAdd.appendChild(foundEvents); 
-				event._embedded.venues[0].city.name === '';
 			}	
+			inputField.value = '';
 		});	
 	}	
 }

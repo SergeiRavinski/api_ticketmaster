@@ -1,12 +1,12 @@
 export const fetchData = async () => {
 
     const warningElement = document.querySelector('.main__error');
-    const currentEvents = 200;
+    let currentEvents = 20;
     const baseUrl = `https://app.ticketmaster.com/discovery/v2`;
     const options = {
         method: "GET",
     }
-    const endpoint = `${baseUrl}/events?&apikey=${apiKey}&locale=*&countryCode=no&size=${currentEvents}`;
+    const endpoint = `${baseUrl}/events?&apikey=${apiKey}&locale=*&countryCode=no&size=${currentEvents}&sort=random`;
 
     let response = '';
     response = await fetch(endpoint, options);
