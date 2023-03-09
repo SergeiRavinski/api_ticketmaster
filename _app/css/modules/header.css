@@ -234,7 +234,7 @@
 @media screen and (max-width: 600px) {
 
 	.header {
-		padding: 2.5vw 2.5vw;
+		padding: 2.5vw 2.5vw 3rem 2.5vw;
 	}
 	
 	.header__logoandinput {
@@ -247,7 +247,7 @@
 		left: 50%;
 		transform: translateX(-50%);
 		height: 100%;
-		max-width: 100%;
+		min-width: 300px;
 	}
 
 	.header__logoandinput-input-button {

@@ -371,12 +371,12 @@
 @media screen and (max-width: 600px) {
 
 	.main {
-		max-width: 95vw;
+		min-width: 95vw;
 		margin: 0 2.5vw;
 	}
 
 	.main__categories {
-		margin-top: 3rem;
+		margin-top: 1rem;
 	}
 
 	.main__categories-items {
