@@ -72,15 +72,55 @@ export default function renderHTMLEvents(data, type) {
 		function hadndleClickLikeButton(eventLike) {
 			eventLike.stopPropagation();
 			addedToWishlist();
-			changeLikeButton();
 			handleButtonAddToWishlist(event);
 		}
 
-		function changeLikeButton() {
-			if(addedEventToWishlist === true) {
+		//wishlist
+		function handleButtonAddToWishlist(event) {
+
+			const id = 'ID';
+			let storedEvents = JSON.stringify(event.id);
+			let parsedEvent = JSON.parse(storedEvents);
+			
+			if (event) {	
+				
+				let addedEvents = [];
+				addedEvents.push(event.id);
+
+				let newEvent = window.localStorage.setItem(id, addedEvents);
+				window.localStorage.getItem(newEvent);
+				
 				newButton.classList.add('main__events-events-like-button--addedtowishlist');
-			} else {
+				
+				//storeEvents();
+				//let wishlistItems = document.querySelector('.main__wishlist-items');
+				//const newDivWishlist = document.createElement('div');
+				//const newButtonWishlist = document.createElement('button');
+				//const newImageWishlist = document.createElement('img');
+				//const newTitleWishlist = document.createElement('h5');
+				//const newHFemWishlist = document.createElement('h6');
+		
+				//newDivWishlist.append(
+				//	newButtonWishlist,
+				//	newImageWishlist,
+				//	newTitleWishlist,
+				//	newHFemWishlist
+				//)
+
+				//event.images.forEach((image) => {
+				//	if (image.width >= 500 && image.width <= 800) {
+				//		newImageWishlist.src = `${image.url}`;
+				//	}
+				//});
+				//newTitleWishlist.textContent = `${event.name}`;
+				//newHFemWishlist.textContent = `${event.dates.start.localDate}`;
+
+				//wishlistItems.appendChild(newDivWishlist);
+			}
+
+			else {
 				newButton.classList.remove('main__events-events-like-button--addedtowishlist');
+				window.localStorage.clear(parsedEvent);
 			}
 		}
 	
@@ -147,40 +187,5 @@ export default function renderHTMLEvents(data, type) {
 		if (event.keyCode === 27)
 		modalWindow.classList.remove('main__modal-window--visible');
 		body.classList.remove('stop-scrolling');
-	}
-
-	//wishlist
-	function handleButtonAddToWishlist(event) {
-
-		if (addedEventToWishlist === true) {
-
-			const wishlistItems = document.querySelector('.main__wishlist-items');
-			const newDivWishlist = document.createElement('div');
-			const newButtonWishlist = document.createElement('button');
-			const newImageWishlist = document.createElement('img');
-			const newTitleWishlist = document.createElement('h5');
-			const newHFemWishlist = document.createElement('h6');
-	
-			newDivWishlist.append(
-				newButtonWishlist,
-				newImageWishlist,
-				newTitleWishlist,
-				newHFemWishlist
-			)
-
-			event.images.forEach((image) => {
-				if (image.width >= 500 && image.width <= 800) {
-					newImageWishlist.src = `${image.url}`;
-				}
-			});
-			newTitleWishlist.textContent = `${event.name}`;
-			newHFemWishlist.textContent = `${event.dates.start.localDate}`;
-
-			wishlistItems.appendChild(newDivWishlist);
-		}
-
-		else {
-			wishlistItems.removeChild(newDivWishlist);
-		}
 	}
 }   
