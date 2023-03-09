@@ -1,13 +1,17 @@
+import { apiKey } from '../env.js';
+
 export const fetchData = async () => {
 
     const warningElement = document.querySelector('.main__error');
-    let currentEvents = 20;
-    const baseUrl = `https://app.ticketmaster.com/discovery/v2`;
+    const currentEvents = 20;
+    const baseUrl = 'https://app.ticketmaster.com/discovery/v2';
+    const locale = '*';
+    const countryCode = 'no';
+    const sort = 'random';
     const options = {
         method: "GET",
     }
-    const endpoint = `${baseUrl}/events?&apikey=${apiKey}&locale=*&countryCode=no&size=${currentEvents}&sort=random`;
-
+    const endpoint = `${baseUrl}/events?&apikey=${apiKey}&locale=${locale}&countryCode=${countryCode}&size=${currentEvents}&sort=${sort}`;
     let response = '';
     response = await fetch(endpoint, options);
 
@@ -36,5 +40,3 @@ export const filtering = (data, type) => {
         return event.classifications[0].segment.name === type;
     });
 }
-
-import { apiKey } from '../env.js';

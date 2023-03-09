@@ -2,7 +2,6 @@ export default function header() {
 
 	let isOpenedNavigationMobile = false;
 	let isOpenedWishlist = false;
-
 	const buttonHamburgerMenu = document.querySelector('.header__navigation-mobile');
 	const buttonWishlist = document.querySelector('.header__navigation-wishlist');
 	const mobileNavigation = document.querySelector('.main__mobile-navigation');

@@ -1,15 +1,18 @@
+import { apiKey } from '../env.js';
+
 export default async function fetchDataSearch() {
 
-	const warningElement = document.querySelector('.main__error');
-	let currentEvents = 200;
 	const baseUrl = `https://app.ticketmaster.com/discovery/v2`;
+	const locale = '*';
+	const countryCode = 'no';
+	const currentEvents = 200;
+	const sort = 'date,asc';
+	const warningElement = document.querySelector('.main__error');
 	const options = {
 		 method: "GET",
 	}
-	const endpoint = `${baseUrl}/events?&apikey=${apiKey}&locale=*&countryCode=no&size=${currentEvents}&sort=date,asc`;
-
-	let response = '';
-	response = await fetch(endpoint, options);
+	const endpoint = `${baseUrl}/events?&apikey=${apiKey}&locale=${locale}&countryCode=${countryCode}&size=${currentEvents}&sort=${sort}`;
+	const response = await fetch(endpoint, options);
 
 	try {
 		 if(response.ok) {
@@ -30,5 +33,3 @@ export default async function fetchDataSearch() {
 			  warningElement.textContent = error;
 	}
 }
-
-import { apiKey } from '../env.js';

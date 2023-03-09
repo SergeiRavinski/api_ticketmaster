@@ -1,10 +1,8 @@
 export default function scrollIntoEvents() {
 
+	let scrolledSectionGallery = false;
 	const buttonGallery = document.querySelector('.header__navigation-gallery')
 	const sectionGallery = document.querySelector('.main__events');
-	const body = document.querySelector('body');
-
-	let scrolledSectionGallery = false;
 
 	buttonGallery.addEventListener('click', handleButtonGallery);
 
@@ -21,22 +19,6 @@ export default function scrollIntoEvents() {
 
 		sectionGallery.scrollIntoView ({
 			behavior: "smooth",
-		})
-		
-		//buttonGallery.classList.add('header__navigation-contacts--active');
-		
-		//if (scrolledSectionGallery === true) {
-		//	sectionGallery.scrollIntoView ({
-		//		behavior: "smooth",
-		//	})
-		//	buttonGallery.classList.add('header__navigation-contacts--active');
-			
-		//}
-		//else {
-		//	body.scrollIntoView ({
-		//		behavior: "smooth",
-		//	})
-		//	buttonGallery.classList.remove('header__navigation-contacts--active');
-		//}	
+		});	
 	}
 }

@@ -5,7 +5,6 @@ export default function renderHTMLEvents(data, type) {
 	let sectionEvents	= '';
 	let modalWindow = document.querySelector('.main__modal-window');
 	let addedEventToWishlist = false;
-
 	const divModalWindowFirstSectionImageElement = document.querySelector('.main__modal-window-card-first-section-image img');
 	const divModalWindowFirstSectionInfoHFive = document.querySelector('.main__modal-window-card-first-section-info h5');
 	const divModalWindowFirstSectionInfoHSixFirst = document.querySelector('.main__modal-window-card-first-section-info h6');
@@ -31,13 +30,14 @@ export default function renderHTMLEvents(data, type) {
 
 		const newDiv = document.createElement('div');
 		const newButton = document.createElement('button');
-		newButton.className = 'main__events-events-like-button';
 		const newLink = document.createElement('a');
 		const newImg = document.createElement('img');
 		const newSpan = document.createElement('span');
 		const newHFive = document.createElement('h5');
 		const newHSixFirst = document.createElement('h6');
 		const newHSixSecond = document.createElement('h6');
+
+		newButton.className = 'main__events-events-like-button';
 
 		event.images.forEach((image) => {
 			if (image.width >= 500 && image.width <= 800) {
@@ -53,9 +53,7 @@ export default function renderHTMLEvents(data, type) {
 			newLink,
 			newSpan
 		);
-
 		newLink.append(newImg);
-
 		newSpan.append(
 			newHFive,
 			newHSixFirst,
@@ -89,7 +87,7 @@ export default function renderHTMLEvents(data, type) {
 		sectionEvents.appendChild(newDiv);  
 	});
 	
-
+	//Modal window
 	function openModalWindow(event) {
 	
 		if(modalWindow) {
@@ -151,6 +149,7 @@ export default function renderHTMLEvents(data, type) {
 		body.classList.remove('stop-scrolling');
 	}
 
+	//wishlist
 	function handleButtonAddToWishlist(event) {
 
 		if (addedEventToWishlist === true) {
