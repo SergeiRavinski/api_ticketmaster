@@ -13,6 +13,5 @@ MVP description: The MVP contains header with navigation and main page with abil
 
 
 Github project: https://github.com/users/SergeiRavinski/projects/2
-
 Github repository: https://github.com/SergeiRavinski/api_ticketmaster 
-Live demo: https://srevents.netlify.app
+ Live demo: https://srevents.netlify.app
