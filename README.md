@@ -13,6 +13,6 @@ Modal window: The modal window displays event image, name, price range, venue, d
 MVP description: The MVP contains header with navigation and main page with ability to search for events by city.
 
 
-Github project: https://github.com/users/SergeiRavinski/projects/2
-Github repository: https://github.com/SergeiRavinski/api_ticketmaster 
+Github project: https://github.com/users/SergeiRavinski/projects/2<br>
+Github repository: https://github.com/SergeiRavinski/api_ticketmaster<br> 
 Live demo: https://srevents.netlify.app
