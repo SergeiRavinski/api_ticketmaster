@@ -1,4 +1,4 @@
-# api_ticketmaster
+# Api ticketmaster
 
 This project is a web application that allows users to search for events by city, genre or artist name using the Ticketmaster API. The project is built using HTML, CSS, JavaScript and utilizes the Rest API.
 
