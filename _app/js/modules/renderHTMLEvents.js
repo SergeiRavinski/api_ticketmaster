@@ -75,21 +75,20 @@ export default function renderHTMLEvents(data, type) {
 			handleButtonAddToWishlist(event);
 		}
 
-		//wishlist
-		
+		//wishlist	
 		function handleButtonAddToWishlist(event) {
 
 			let id = "ID";	
 			let addedEvents = [];
+			let storeEvent = event.id;
 			//let parsedEvent = JSON.parse(storedEvents);
 			
 			if (addedEventToWishlist === true) {	
 
-				let storeEvent = event.id;
-				let newEvent = window.localStorage.setItem(id, JSON.stringify(storeEvent));
-				addedEvents.push(newEvent);
-				window.localStorage.getItem(addedEvents);
-				
+				addedEvents = [...JSON.parse(window.localStorage.getItem(id))];
+				addedEvents.push((storeEvent));
+				window.localStorage.setItem(id, JSON.stringify(addedEvents));
+	
 				console.log(addedEvents)
 				newButton.classList.add('main__events-events-like-button--addedtowishlist');
 				
