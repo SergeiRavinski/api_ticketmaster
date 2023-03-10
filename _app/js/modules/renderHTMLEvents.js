@@ -76,23 +76,23 @@ export default function renderHTMLEvents(data, type) {
 		}
 
 		//wishlist
+		
 		function handleButtonAddToWishlist(event) {
 
-			const id = 'ID';
-			let storedEvents = JSON.stringify(event.id);
-			let parsedEvent = JSON.parse(storedEvents);
+			let id = "ID";	
+			let addedEvents = [];
+			//let parsedEvent = JSON.parse(storedEvents);
 			
-			if (event) {	
-				
-				let addedEvents = [];
-				addedEvents.push(event.id);
+			if (addedEventToWishlist === true) {	
 
-				let newEvent = window.localStorage.setItem(id, addedEvents);
-				window.localStorage.getItem(newEvent);
+				let storeEvent = event.id;
+				let newEvent = window.localStorage.setItem(id, JSON.stringify(storeEvent));
+				addedEvents.push(newEvent);
+				window.localStorage.getItem(addedEvents);
 				
+				console.log(addedEvents)
 				newButton.classList.add('main__events-events-like-button--addedtowishlist');
 				
-				//storeEvents();
 				//let wishlistItems = document.querySelector('.main__wishlist-items');
 				//const newDivWishlist = document.createElement('div');
 				//const newButtonWishlist = document.createElement('button');
@@ -120,10 +120,9 @@ export default function renderHTMLEvents(data, type) {
 
 			else {
 				newButton.classList.remove('main__events-events-like-button--addedtowishlist');
-				window.localStorage.clear(parsedEvent);
-			}
+				//window.localStorage.clear();
+			}	
 		}
-	
 		sectionEvents.appendChild(newDiv);  
 	});
 	
