@@ -84,46 +84,45 @@ export default function renderHTMLEvents(data, type) {
 			
 			if (addedEventToWishlist === true) {	
 
+				//Add to local storage
 				addedEvents = JSON.parse(localStorage.getItem(id)) || [];
 				addedEvents.push((storeEvent));
 				localStorage.setItem(id, JSON.stringify(addedEvents));
 
-				
-				//addedEvents = [...JSON.parse(localStorage.getItem(id))];
-				//addedEvents.push((storeEvent));
-				//localStorage.setItem(id, JSON.stringify(addedEvents));
-				
+				const wishlistItems = document.querySelector('.main__wishlist-items');
+				const newDivWishlist = document.createElement('div');
+				const newButtonWishlist = document.createElement('button');
+				const newImageWishlist = document.createElement('img');
+				const newTitleWishlist = document.createElement('h5');
+				const newHFemWishlist = document.createElement('h6');
+		
+				newDivWishlist.append(
+					newButtonWishlist,
+					newImageWishlist,
+					newTitleWishlist,
+					newHFemWishlist
+				)
+
+				event.images.forEach((image) => {
+					if (image.width >= 500 && image.width <= 800) {
+						newImageWishlist.src = `${image.url}`;
+					}
+				});
+				newTitleWishlist.textContent = `${event.name}`;
+				newHFemWishlist.textContent = `${event.dates.start.localDate}`;
+
+				wishlistItems.appendChild(newDivWishlist);
 
 				newButton.classList.add('main__events-events-like-button--addedtowishlist');
-				
-				//let wishlistItems = document.querySelector('.main__wishlist-items');
-				//const newDivWishlist = document.createElement('div');
-				//const newButtonWishlist = document.createElement('button');
-				//const newImageWishlist = document.createElement('img');
-				//const newTitleWishlist = document.createElement('h5');
-				//const newHFemWishlist = document.createElement('h6');
-		
-				//newDivWishlist.append(
-				//	newButtonWishlist,
-				//	newImageWishlist,
-				//	newTitleWishlist,
-				//	newHFemWishlist
-				//)
-
-				//event.images.forEach((image) => {
-				//	if (image.width >= 500 && image.width <= 800) {
-				//		newImageWishlist.src = `${image.url}`;
-				//	}
-				//});
-				//newTitleWishlist.textContent = `${event.name}`;
-				//newHFemWishlist.textContent = `${event.dates.start.localDate}`;
-
-				//wishlistItems.appendChild(newDivWishlist);
 			}
 			
 			else {
+
+				//addedEvents = JSON.parse(localStorage.removeItem(id)) || [];
+				//addedEvents.remove((storeEvent));
+				//localStorage.removeItem(id, JSON.stringify(addedEvents));
+
 				newButton.classList.remove('main__events-events-like-button--addedtowishlist');
-				//window.localStorage.clear();
 			}	
 			
 		}
