@@ -193,7 +193,6 @@
 .main__events-events div,
 .main__music-events div,
 .main__search-window-element-events div {
-	min-width: 15vw;
 	min-height: 13vw;
 	font-size: 0.7rem;
 	position: relative;
@@ -202,10 +201,7 @@
 	box-shadow: 0.05rem 0.05rem 0.4rem var(--secondary-dark), -0.05rem -0.05rem 0.4rem var(--secondary-light);
 }
 
-/*.main__events-events div button,*/
 .main__events-events-like-button,
-/*.main__music-events div button,*/
-/*.main__search-window-element-events div button*/
 .main__search-window-like-button {
 	position: absolute;
 	z-index: 20;
