@@ -4,7 +4,7 @@ export default function renderHTMLEvents(data, type) {
 
 	let sectionEvents	= '';
 	let modalWindow = document.querySelector('.main__modal-window');
-	let addedEventToWishlist = false;
+	//let addedEventToWishlist = false;
 	const divModalWindowFirstSectionImageElement = document.querySelector('.main__modal-window-card-first-section-image img');
 	const divModalWindowFirstSectionInfoHFive = document.querySelector('.main__modal-window-card-first-section-info h5');
 	const divModalWindowFirstSectionInfoHSixFirst = document.querySelector('.main__modal-window-card-first-section-info h6');
@@ -39,7 +39,7 @@ export default function renderHTMLEvents(data, type) {
 
 		newButton.className = 'main__events-events-like-button';
 
-		event.images.forEach((image) => {
+		event.images.find((image) => {
 			if (image.width >= 500 && image.width <= 800) {
 				newImg.src = `${image.url}`;
 			}
@@ -64,66 +64,137 @@ export default function renderHTMLEvents(data, type) {
 			openModalWindow(event);
 		});
 
-		function addedToWishlist() {
-			addedEventToWishlist = !addedEventToWishlist;
-		};
+		//function addedToWishlist() {
+		//	addedEventToWishlist = !addedEventToWishlist;
+		//};
 
 		newButton.addEventListener('click', hadndleClickLikeButton);
 		function hadndleClickLikeButton(eventLike) {
 			eventLike.stopPropagation();
-			addedToWishlist();
-			handleButtonAddToWishlist(event);
+			//addedToWishlist();
+			handleButtonAddToWishlist();
 		}
 
+
+
+		data.forEach(event => {
+			const ev = event.id === 'Z698xZb_Z17Q3PA';
+			if(ev) {
+			
+				//console.log(event.name)
+				
+			}
+
+			
+		})
+
 		//wishlist	
-		function handleButtonAddToWishlist(event) {
+		function handleButtonAddToWishlist() {
 
 			let id = "ID";	
 			let addedEvents = [];
 			let storeEvent = event.id;
+
+			//Add to local storage
+			addedEvents = JSON.parse(localStorage.getItem(id)) || [];
+			addedEvents.push((storeEvent));
+			localStorage.setItem(id, JSON.stringify(addedEvents));
+
+
+			//let eventsInStorage = JSON.parse(localStorage.getItem(id))
+			//for (let event of addedEvents) {
+			//	console.log(event)
+			//}
 			
-			if (addedEventToWishlist === true) {	
 
-				//Add to local storage
-				addedEvents = JSON.parse(localStorage.getItem(id)) || [];
-				addedEvents.push((storeEvent));
-				localStorage.setItem(id, JSON.stringify(addedEvents));
+			addedEvents = JSON.parse(localStorage.getItem(id)).forEach(addedId => {
 
-				const wishlistItems = document.querySelector('.main__wishlist-items');
-				const newDivWishlist = document.createElement('div');
-				const newButtonWishlist = document.createElement('button');
-				const newImageWishlist = document.createElement('img');
-				const newTitleWishlist = document.createElement('h5');
-				const newHFemWishlist = document.createElement('h6');
-		
-				newDivWishlist.append(
-					newButtonWishlist,
-					newImageWishlist,
-					newTitleWishlist,
-					newHFemWishlist
-				)
+			//	console.log(addedId)
 
-				event.images.forEach((image) => {
-					if (image.width >= 500 && image.width <= 800) {
-						newImageWishlist.src = `${image.url}`;
+				data.forEach(currentEvent => {
+					console.log(currentEvent.name)
+					
+				
+
+
+					if(currentEvent.id === addedId) {
+						const wishlistItems = document.querySelector('.main__wishlist-items');
+						const newDivWishlist = document.createElement('div');
+						const newButtonWishlist = document.createElement('button');
+						const newImageWishlist = document.createElement('img');
+						const newTitleWishlist = document.createElement('h5');
+						const newHFemWishlist = document.createElement('h6');
+				
+						newDivWishlist.append(
+							newButtonWishlist,
+							newImageWishlist,
+							newTitleWishlist,
+							newHFemWishlist
+						)
+
+						event.images.forEach((image) => {
+							if (image.width >= 500 && image.width <= 800) {
+								newImageWishlist.src = `${image.url}`;
+							}
+						});
+						newTitleWishlist.textContent = `${event.name}`;
+						newHFemWishlist.textContent = `${event.dates.start.localDate}`;
+
+						wishlistItems.appendChild(newDivWishlist);
+
+						newButton.classList.add('main__events-events-like-button--addedtowishlist');
 					}
-				});
-				newTitleWishlist.textContent = `${event.name}`;
-				newHFemWishlist.textContent = `${event.dates.start.localDate}`;
-
-				wishlistItems.appendChild(newDivWishlist);
-
-				newButton.classList.add('main__events-events-like-button--addedtowishlist');
-			}
+				});		
+			});
 			
-			else {
 
-				//addedEvents = JSON.parse(localStorage.removeItem(id)) || [];
-				//addedEvents.remove((storeEvent));
-				//localStorage.removeItem(id, JSON.stringify(addedEvents));
 
-				newButton.classList.remove('main__events-events-like-button--addedtowishlist');
-			}	
+
+
+
+			
+			//if (!storeEvent === null) {	
+
+				////Add to local storage
+				//addedEvents = JSON.parse(localStorage.getItem(id)) || [];
+				//addedEvents.push((storeEvent));
+				//localStorage.setItem(id, JSON.stringify(addedEvents));
+
+				//const wishlistItems = document.querySelector('.main__wishlist-items');
+				//const newDivWishlist = document.createElement('div');
+				//const newButtonWishlist = document.createElement('button');
+				//const newImageWishlist = document.createElement('img');
+				//const newTitleWishlist = document.createElement('h5');
+				//const newHFemWishlist = document.createElement('h6');
+		
+				//newDivWishlist.append(
+				//	newButtonWishlist,
+				//	newImageWishlist,
+				//	newTitleWishlist,
+				//	newHFemWishlist
+				//)
+
+				//event.images.forEach((image) => {
+				//	if (image.width >= 500 && image.width <= 800) {
+				//		newImageWishlist.src = `${image.url}`;
+				//	}
+				//});
+				//newTitleWishlist.textContent = `${event.name}`;
+				//newHFemWishlist.textContent = `${event.dates.start.localDate}`;
+
+				//wishlistItems.appendChild(newDivWishlist);
+
+				//newButton.classList.add('main__events-events-like-button--addedtowishlist');
+			//}
+			
+			//else {
+
+			//	//addedEvents = JSON.parse(localStorage.removeItem(id)) || [];
+			//	//addedEvents.remove((storeEvent));
+			//	//localStorage.removeItem(id, JSON.stringify(addedEvents));
+
+			//	//newButton.classList.remove('main__events-events-like-button--addedtowishlist');
+			//}	
 			
 		}
 		sectionEvents.appendChild(newDiv);  
