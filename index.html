@@ -14,6 +14,42 @@
 		<script type="module" src="./_app/js/main.js"></script>
 		<link rel="stylesheet" href="./_app/css/main.css">
 		<script type="module" src="./_app/js/main.js"></script>
+
+		<meta name="description" content="Buy tickets online for concerts, sports, theater, family and other events near you">
+		
+		<script type="application/ld+json">
+			{
+			  "@context": "https://schema.org",
+			  "@type": "Tickets selling",
+			  "name": "SrEvents",
+			  "currenciesAccepted": "NOK",
+			  "address": {
+				 "@type": "PostalAddress",
+				 "addressLocality": "Oslo",
+				 "addressRegion": "Oslo",
+				 "postalCode": "0680",
+				 "streetAddress": "Havreveien"
+			  },
+			  "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+			  "openingHoursSpecification":
+			  [
+				 {
+					"@type": "OpeningHoursSpecification",
+					"validFrom": "2023-12-23",
+					"validThrough": "2023-12-31",
+					"opens": "09:00:00",
+					"closes": "11:00:00"
+				 },
+				 {
+					"@type": "OpeningHoursSpecification",
+					"validFrom": "2014-01-01",
+					"validThrough": "2014-01-01",
+					"opens": "12:00:00",
+					"closes": "14:00:00"
+				 }
+			  ]
+			}
+		</script>
 	</head>
 
 	<body>
