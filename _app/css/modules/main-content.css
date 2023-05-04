@@ -285,6 +285,7 @@
 
 .main__button-scroll-up {
 	position: fixed;
+	display: flex;
 	right: 3vw;
 	bottom: 3vw;
 	width: 2.5rem;
@@ -300,7 +301,7 @@
 }
 
 .main__button-scroll-up img {
-	padding: 0.3vw;
+	padding: 0.3rem;
 }
 
 @keyframes fade {

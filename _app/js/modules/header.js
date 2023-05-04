@@ -57,13 +57,13 @@ export default function header() {
 	function renderHTMLMenu() {
 		if (isOpenedNavigationMobile) {
 			(isOpenedWishlist = false);
-			buttonHamburgerMenu.classList.add('open');
+			buttonHamburgerMenu.classList.add('header__navigation-mobile--opened');
 			mobileNavigation.classList.add('main__mobile-navigation--visible')
 			wishlist.classList.remove('main__wishlist--visible');
 			buttonWishlist.classList.remove('header__navigation-wishlist--active');
 		}
 		else {
-			buttonHamburgerMenu.classList.remove('open');
+			buttonHamburgerMenu.classList.remove('header__navigation-mobile--opened');
 			mobileNavigation.classList.remove('main__mobile-navigation--visible')
 		}
 	}
@@ -73,7 +73,7 @@ export default function header() {
 			(isOpenedNavigationMobile = false);
 			wishlist.classList.add('main__wishlist--visible');
 			buttonWishlist.classList.add('header__navigation-wishlist--active');
-			buttonHamburgerMenu.classList.remove('open');
+			buttonHamburgerMenu.classList.remove('header__navigation-mobile--opened');
 			mobileNavigation.classList.remove('main__mobile-navigation--visible')
 		}
 		else {
@@ -83,7 +83,7 @@ export default function header() {
 	}
 
 	function renderHTMLCloseMenus() {
-		buttonHamburgerMenu.classList.remove('open');
+		buttonHamburgerMenu.classList.remove('header__navigation-mobile--opened');
 		mobileNavigation.classList.remove('main__mobile-navigation--visible')
 		wishlist.classList.remove('main__wishlist--visible');
 		buttonWishlist.classList.remove('header__navigation-wishlist--active');
