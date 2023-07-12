@@ -1,5 +1,4 @@
 export default function scrollUp() {
-
 	const buttonUp = document.querySelector('.main__button-scroll-up');
 	const buttonGallery = document.querySelector('.header__navigation-gallery')
 
@@ -7,7 +6,6 @@ export default function scrollUp() {
 	buttonUp.addEventListener('click', handleButtonArrowUp);
 
 	function handleWindowScroll() {
-
 		if (window.pageYOffset >= window.innerHeight * 0.01) {
 			buttonUp.classList.add('main__button-scroll-up--visible');
 		}

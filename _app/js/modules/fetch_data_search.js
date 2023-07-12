@@ -15,17 +15,17 @@ export default async function fetchDataSearch() {
 	const response = await fetch(endpoint, options);
 
 	try {
-		 if(response.ok) {
+		 if (response.ok) {
 			  const result = await response.json();
 			  const { events } = result._embedded;
 			  return events;
-		 }else if(response.status === 404) {
+		 } else if (response.status === 404) {
 			  throw new Error('Url not existing');
-		 }else if(response.status === 401) {
+		 } else if (response.status === 401) {
 			  throw new Error('Not authorized user');
-		 }else if(response.status >= 500) {
+		 } else if (response.status >= 500) {
 			  throw new Error('Server not responding');
-		 }else {
+		 } else {
 			  throw new Error('Something went wrong');
 		 }
 	} catch (error) {

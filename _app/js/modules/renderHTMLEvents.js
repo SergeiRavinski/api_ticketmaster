@@ -18,7 +18,7 @@ export default function renderHTMLEvents(data, type) {
 	divModalWindowFirstSectionButtonClose.addEventListener('click', handleCloseModalWindow);
 	window.addEventListener('keydown', handleCloseModalWindowEscape);
 
-	if(type === 'music') {
+	if (type === 'music') {
 		sectionEvents = document.querySelector('.main__music-events');
 	}
 
@@ -27,7 +27,6 @@ export default function renderHTMLEvents(data, type) {
 	}
 
 	data.forEach((event) => {
-
 		const newDiv = document.createElement('div');
 		const newButton = document.createElement('button');
 		const newLink = document.createElement('a');
@@ -75,17 +74,11 @@ export default function renderHTMLEvents(data, type) {
 			handleButtonAddToWishlist();
 		}
 
-
-
 		data.forEach(event => {
 			const ev = event.id === 'Z698xZb_Z17Q3PA';
-			if(ev) {
-			
+			if (ev) {			
 				//console.log(event.name)
-				
 			}
-
-			
 		})
 
 		//wishlist	
@@ -117,7 +110,7 @@ export default function renderHTMLEvents(data, type) {
 				
 
 
-					if(currentEvent.id === addedId) {
+					if (currentEvent.id === addedId) {
 						const wishlistItems = document.querySelector('.main__wishlist-items');
 						const newDivWishlist = document.createElement('div');
 						const newButtonWishlist = document.createElement('button');
@@ -203,7 +196,7 @@ export default function renderHTMLEvents(data, type) {
 	//Modal window
 	function openModalWindow(event) {
 	
-		if(modalWindow) {
+		if (modalWindow) {
 
 			modalWindow.classList.add('main__modal-window--visible');
 			body.classList.add('stop-scrolling');

@@ -11,7 +11,7 @@ export default function renderHTMLSearch(dataSearch) {
 	window.addEventListener('keydown', handleKeyDown);
 
 	function handleKeyDown(event) {
-		if(event.keyCode === 27) {
+		if (event.keyCode === 27) {
 			searchWindow.classList.remove('main__search-window--visible');
 			mainSection.classList.remove('stop-scrolling');
 		}

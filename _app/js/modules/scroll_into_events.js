@@ -1,8 +1,8 @@
 export default function scrollIntoEvents() {
-
-	let scrolledSectionGallery = false;
 	const buttonGallery = document.querySelector('.header__navigation-gallery')
 	const sectionGallery = document.querySelector('.main__events');
+	
+	let scrolledSectionGallery = false;
 
 	buttonGallery.addEventListener('click', handleButtonGallery);
 

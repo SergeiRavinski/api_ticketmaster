@@ -16,7 +16,7 @@ export default function header() {
 	window.addEventListener('keydown', handleKeyDown);
 
 	function handleKeyDown(event) {
-		if(event.keyCode === 27) {
+		if (event.keyCode === 27) {
 			(isOpenedWishlist = false);
 			wishlist.classList.remove('main__wishlist--visible');
 			buttonWishlist.classList.remove('header__navigation-wishlist--active');
